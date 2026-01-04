@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'career-legacy-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Career Legacy Challenge">
+    <my-challenge
+      heading="Career Legacy Challenge"
+      moreAt="https://www.risshella.com/sims4/careerlegacychallenge"
+    >
       <section intro>
         <p>
           The Career Legacy Challenge is currently being played and developed by

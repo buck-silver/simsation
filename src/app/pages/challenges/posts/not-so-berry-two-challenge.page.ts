@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'not-so-berry-two-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Not So Berry Two Challenge">
+    <my-challenge
+      heading="Not So Berry Two Challenge"
+      moreAt="https://simmer-emsie.tumblr.com/post/635534767984656384/not-so-berry-legacy-challenge-2"
+    >
       <section intro>
         <p>
           The original NSB Challenge was created in 2017, but in 2020 it was

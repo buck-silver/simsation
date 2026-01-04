@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'bunker-legacy-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Bunker Legacy Challenge">
+    <my-challenge
+      heading="Bunker Legacy Challenge"
+      moreAt="https://purpleplumbob.weebly.com/the-sims-4-bunker-challenge.html"
+    >
       <section intro>
         <p>
           Do you enjoy post-apocalyptic story lines? Do you enjoy rags to riches

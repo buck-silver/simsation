@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'decades-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Decades Challenge">
+    <my-challenge
+      heading="Decades Challenge"
+      moreAt="https://cutecoffeegal.com/decadeschallengerules/"
+    >
       <section intro>
         <p>
           I love historical fiction, so this challenge is right up my alley. It

@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'asylum-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Asylum Challenge">
+    <my-challenge
+      heading="Asylum Challenge"
+      moreAt="https://forums.ea.com/discussions/the-sims-4-creative-corner-en/the-sims-4-asylum-challenge-updated-sept-2019/1421268"
+    >
       <section intro>
         <p>
           This challenge has been around since the Sims 2, and I still love the
@@ -96,6 +99,13 @@ import { MyChallengeModule } from '../components/my-challenge.module';
         example, for easy mode you would put “testingcheats true” followed by
         “money 1000” followed by “testingcheats false”.
       </p>
+
+      <a
+        matButton="tonal"
+        style="display: flex; width: fit-content; margin: 1rem auto 0 auto;"
+        href="https://nadzicle.tumblr.com/adkoj"
+        >See Full Challenge Rules Here</a
+      >
     </my-challenge>
   `,
 })

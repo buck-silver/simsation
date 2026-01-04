@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'black-widow-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Black Widow Challenge">
+    <my-challenge
+      heading="Black Widow Challenge"
+      moreAt="https://sims4challengesrules.blogspot.com/2014/10/black-widow-challenge.html"
+    >
       <section intro>
         <p>
           This is another classic challenge that has been around since the Sims

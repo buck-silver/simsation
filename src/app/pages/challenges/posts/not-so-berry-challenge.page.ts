@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'not-so-berry-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Not So Berry Challenge">
+    <my-challenge
+      heading="Not So Berry Challenge"
+      moreAt="https://lilsimsie.tumblr.com/post/157671494755/not-so-berry-legacy-challenge"
+    >
       <section intro>
         <p>
           The Not So Berry Challenge has been around for awhile, but it’s still

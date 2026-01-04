@@ -25,7 +25,7 @@ import { MyChallengeModule } from '../components/my-challenge.module';
               credit
               [to]="'LibrarianSimmer'"
               [note]="
-                'Originally found on the EA forums, but is no longer available there.'
+                '(Originally posted on the EA Forums, but is no longer available. Preserved in full below.)'
               "
             ></li>
           </ul>

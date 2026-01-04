@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'legacy-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Legacy Challenge & Simple Variations">
+    <my-challenge
+      heading="Legacy Challenge & Simple Variations"
+      moreAt="https://simslegacychallenge.com/"
+    >
       <section intro>
         <p>
           The original Legacy Challenge was created by Pinstar in 2004. He

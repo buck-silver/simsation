@@ -16,8 +16,9 @@ import { MyChallengeModule } from '../components/my-challenge.module';
           <ul credit-list>
             <li
               credit
-              [to]="
-                'Sim4D (originally posted on EA Forum, but no longer available)'
+              [to]="'Sim4D'"
+              [note]="
+                '(Originally posted on the EA Forums, but is no longer available. Preserved in full below.)'
               "
             ></li>
           </ul>

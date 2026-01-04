@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'one-hundred-baby-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="100 Baby Challenge">
+    <my-challenge
+      heading="100 Baby Challenge"
+      moreAt="https://snarky-sims-witch.tumblr.com/post/181535303038/thanks-for-being-patient-with-me-the-challenge-is"
+    >
       <section intro>
         <p>
           I googled Sims 4 Challenges the other day, and it turns out there are

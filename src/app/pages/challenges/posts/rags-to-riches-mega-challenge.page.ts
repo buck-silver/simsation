@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'rags-to-riches-mega-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Rags to Riches Mega Challenge">
+    <my-challenge
+      heading="Rags to Riches Mega Challenge"
+      moreAt="https://modthesims.info/t/550861"
+    >
       <section intro>
         <p>
           I always enjoy a simple Rags to Riches challenge, but did you know

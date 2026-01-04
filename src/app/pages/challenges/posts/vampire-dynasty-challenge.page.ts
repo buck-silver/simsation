@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'vampire-dynasty-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Vampire Dynasty Challenge">
+    <my-challenge
+      heading="Vampire Dynasty Challenge"
+      moreAt="https://forums.ea.com/discussions/the-sims-4-creative-corner-en/vampire-dynasty-legacy-challenge/187980"
+    >
       <section intro>
         <p>
           If you enjoy occult game play then you might want to try this Vampire

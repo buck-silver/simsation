@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'off-the-grid-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="Off the Grid Challenge">
+    <my-challenge
+      heading="Off the Grid Challenge"
+      moreAt="https://snarky-sims-witch.tumblr.com/post/181537294178/tos-you-must-credit-me-and-link-back-to-this-post"
+    >
       <section intro>
         <p>
           This challenge was written before the “Off the Grid” lot trait was

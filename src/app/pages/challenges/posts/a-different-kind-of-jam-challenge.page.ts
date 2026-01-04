@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'a-different-kind-of-jam-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="A Different Kind of Jam Challenge">
+    <my-challenge
+      heading="A Different Kind of Jam Challenge"
+      moreAt="https://nadzicle.tumblr.com/adkoj"
+    >
       <section intro>
         <p>
           I know there are a ton of berry themed challenges, but this one was
