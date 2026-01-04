@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { PageDirective } from '../../core/page/components/page.directive';
 import { PageModule } from '../../core/page/page.module';
 import { NavTableComponent } from '../../core/navigation/components/nav-table.component';
-import ROUTES from './challenges.routes';
+import { CHALLENGES_ROUTES } from './challenges.routes';
 import { ContentModule } from '../../core/content/content.module';
 
 type ChallengeCard = {
@@ -254,7 +254,7 @@ type ChallengeCard = {
   `,
 })
 export default class ChallengesPage {
-  readonly routes = ROUTES;
+  readonly routes = CHALLENGES_ROUTES;
 
   readonly challenges = signal<ChallengeCard[]>([
     {
