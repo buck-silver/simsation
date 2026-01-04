@@ -8,8 +8,8 @@ export const HOME_NAV: NavMain = {
 
 export const ROUTES: Routes = [
   {
-    path: '/',
-    title: 'Simsation.ca',
+    path: '',
+    title: 'Home | Simsation',
     loadComponent: () => import('./home.page'),
   },
 ];

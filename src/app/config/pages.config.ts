@@ -3,8 +3,7 @@ import { Routes } from '@angular/router';
 export const PAGES_CONFIG: Routes = [
   {
     path: '',
-    loadComponent: () => import('../pages/home/home.page'),
-    children: [],
+    loadChildren: () => import('../pages/home/home.routes'),
   },
   {
     path: 'apps',

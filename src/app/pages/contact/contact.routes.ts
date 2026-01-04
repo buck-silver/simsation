@@ -9,7 +9,7 @@ export const CONTACT_NAV: NavMain = {
 export const ROUTES: Routes = [
   {
     path: '',
-    title: 'Contact',
+    title: 'Contact | Simsation',
     loadComponent: () => import('./contact.page'),
   },
 ];

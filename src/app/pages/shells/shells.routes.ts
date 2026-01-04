@@ -9,7 +9,7 @@ export const SHELLS_NAV: NavMain = {
 export const ROUTES: Routes = [
   {
     path: '',
-    title: 'Shells',
+    title: 'Shells | Simsation',
     loadComponent: () => import('./shells.page'),
   },
 ];
