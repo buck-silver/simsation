@@ -10,7 +10,7 @@ import { ShellThemeComponent } from '../../core/shell/components/shell-theme.com
       <!-- Home Button -->
       <a
         matButton="filled"
-        href="https://simsation.ca"
+        href="/"
         aria-label="homepage link"
         class="home-callback"
       >
