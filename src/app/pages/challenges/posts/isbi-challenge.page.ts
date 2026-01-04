@@ -5,7 +5,10 @@ import { MyChallengeModule } from '../components/my-challenge.module';
   selector: 'isbi-challenge',
   imports: [MyChallengeModule],
   template: `
-    <my-challenge heading="ISBI Challenge">
+    <my-challenge
+      heading="ISBI Challenge"
+      moreAt="https://forums.ea.com/discussions/the-sims-4-creative-corner-en/lynnwoods-isbi-challenge-rules-for-ts4---315-growing-together-rules-update/2580029?after=MjUuMTF8Mi4xfGl8MTB8Mzk6MXxpbnQsMjU4MDAzMCwyNTgwMDM5"
+    >
       <section intro>
         <p>
           The “I’m Surrounded By Idiots” Challenge is probably my favourite
