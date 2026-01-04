@@ -56,12 +56,12 @@ export function configureSecurityMiddleware(app: Express): void {
         'http://localhost:8080',
       ];
 
-      // Allow requests with no origin (mobile apps, Postman, etc.)
-      if (!origin) {
+      // if ALLOWED_ORIGINS is set to '*', allow all origins (for testing only)
+      if (allowedOrigins.includes('*')) {
         return callback(null, true);
       }
 
-      if (allowedOrigins.includes(origin)) {
+      if (origin && allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));
