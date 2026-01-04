@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'simsation-profile',
   template: `
     <img
-      src="https://simsation.ca/wp-content/uploads/2020/11/cropped-Profile-Pic-Wide.png"
+      src="favicon.ico"
       class="profile-image"
       alt="Simsation Profile Picture"
     />
