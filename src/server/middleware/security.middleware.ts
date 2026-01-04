@@ -22,6 +22,7 @@ export function configureSecurityMiddleware(app: Express): void {
             'https://googleads.g.doubleclick.net',
             'https://www.googletagservices.com',
           ],
+          scriptSrcAttr: ["'unsafe-hashes'", "'unsafe-inline'"],
           styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
           fontSrc: ["'self'", 'https://fonts.gstatic.com'],
           imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
