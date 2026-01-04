@@ -93,11 +93,15 @@ app.use(errorHandler);
  * variable, or defaults to 8080.
  */
 if (isMainModule(import.meta.url) || process.env['pm_id']) {
-  const port = process.env['PORT'] || 8080;
-  const nodeEnv = process.env['NODE_ENV'] || 'development';
+  const port = Number(process.env['PORT']) || 8080;
+  const hostname = process.env['HOSTNAME'] || 'localhost';
+  const mode = process.env['NODE_ENV'] || 'development';
   
-  app.listen(port, () => {
-    logger.info(`Server started in ${nodeEnv} mode on http://localhost:${port}`);
+  app.listen(port, hostname, () => {
+    const url = mode === 'production' 
+      ? `Port ${port}` 
+      : `http://${hostname}:${port}`;
+    logger.info(`Server started in ${mode} mode on ${url}`);
   });
 }
 
