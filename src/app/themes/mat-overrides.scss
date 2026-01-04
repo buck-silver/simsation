@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+
+html {
+  @include mat.sidenav-overrides((
+    container-shape: square,
+  ));
+
+  @include mat.expansion-overrides((
+    container-elevation-shadow: none,
+  ));
+
+  .mat-mdc-table {
+    border: 1px solid var(--mat-sys-outline);
+    border-radius: var(--mat-sys-corner-medium);
+    overflow: hidden;
+  }
+
+  .mat-mdc-header-row {
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+  }
+
+  .mat-expansion-panel{
+    border: 1px solid var(--mat-sys-outline);
+    border-radius: var(--mat-sys-corner-medium);
+    box-shadow: none;
+  }
+
+  .mat-expansion-panel-content{
+    border-top: 1px solid var(--mat-sys-outline);
+  }
+}
+

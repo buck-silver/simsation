@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+@use './mat-overrides' as overrides;
+@use './mat-palettes' as palettes;
+@use './styles' as styles;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: palettes.$primary,
+      secondary: palettes.$secondary,
+      tertiary: palettes.$tertiary,
+      error: mat.$red-palette,
+      theme-type: light,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}

@@ -1,0 +1,85 @@
+//=============================================================================
+// Page
+//=============================================================================
+// This file is part of the "Page" component, which is a general layout
+// component that provides the structure for organizing the primary content of
+// the client. Because we are reusing these styles across routes, we make them
+// available globally by precompiling (see angular.json).
+//=============================================================================
+.page {
+  position: relative;
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: -3rem auto 0 auto;
+  gap: 1rem;
+  grid-template-areas:
+    '. page-header   .'
+    '. page-content  .'
+    '. page-aside    .'
+    '. page-controls .'
+    '. page-footer   .'
+    '. page-ad       .';
+  grid-template-columns: auto minmax(22.5rem, 60rem) auto;
+  grid-template-rows: auto 1fr auto auto auto;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    grid-column: 2; // Targets the second column
+    grid-row: 1 / -1; // Spans all rows
+    pointer-events: none; // Prevent interaction
+  }
+}
+
+@container (width > 80rem) {
+  .page {
+    grid-template-areas:
+      '. page-header   .'
+      '. page-content  .'
+      '. page-aside    .'
+      '. page-controls .'
+      '. page-footer   .'
+      '. page-ad       .';
+    grid-template-columns: 1fr 60rem 1fr;
+
+    // When only .page-aside is present (no ad)
+    &:has(.page-aside):not(:has(.page-ad)) {
+      grid-template-areas:
+        '. page-header   .          .'
+        '. page-content  page-aside .'
+        '. page-content  .          .'
+        '. page-controls .          .'
+        '. page-footer   .          .';
+      grid-template-columns: 1fr 60rem 20rem 1fr;
+      grid-template-rows: auto auto 1fr auto auto;
+    }
+
+    // When only .page-ad is present (no aside)
+    &:has(.page-ad):not(:has(.page-aside)) {
+      grid-template-areas:
+        '. page-header   .       .'
+        '. page-content  page-ad .'
+        '. page-content  .       .'
+        '. page-controls .       .'
+        '. page-footer   .       .';
+      grid-template-columns: 1fr 60rem 20rem 1fr;
+      grid-template-rows: auto auto 1fr auto auto;
+    }
+
+    // When both .page-ad and .page-aside are present
+    &:has(.page-ad):has(.page-aside) {
+      grid-template-areas:
+        '. page-header   .          .'
+        '. page-content  page-ad    .'
+        '. page-content  page-aside .'
+        '. page-content  .          .'
+        '. page-controls .          .'
+        '. page-footer   .          .';
+      grid-template-columns: 1fr 60rem 20rem 1fr;
+      grid-template-rows: auto auto auto 1fr auto auto;
+    }
+  }
+}

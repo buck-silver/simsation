@@ -1,0 +1,107 @@
+import helmet from 'helmet';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
+import type { Express } from 'express';
+
+/**
+ * Configures security middleware for the Express application
+ */
+export function configureSecurityMiddleware(app: Express): void {
+  // Security headers with helmet
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: [
+            "'self'",
+            "'unsafe-inline'",
+            "'unsafe-eval'",
+            'https://securepubads.g.doubleclick.net',
+            'https://pagead2.googlesyndication.com',
+            'https://googleads.g.doubleclick.net',
+            'https://www.googletagservices.com',
+          ],
+          styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+          fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+          imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
+          connectSrc: [
+            "'self'",
+            'https://securepubads.g.doubleclick.net',
+            'https://googleads.g.doubleclick.net',
+          ],
+          frameSrc: [
+            "'self'",
+            'https://www.google.com',
+            'https://googleads.g.doubleclick.net',
+            'https://tpc.googlesyndication.com',
+          ],
+          objectSrc: ["'none'"],
+          upgradeInsecureRequests: [],
+        },
+      },
+      crossOriginEmbedderPolicy: false, // Allow embedded content
+      hsts: {
+        maxAge: 31536000, // 1 year
+        includeSubDomains: true,
+        preload: true,
+      },
+    })
+  );
+
+  // CORS configuration
+  const corsOptions: cors.CorsOptions = {
+    origin: (origin, callback) => {
+      const allowedOrigins = process.env['ALLOWED_ORIGINS']?.split(',') || [
+        'http://localhost:8080',
+      ];
+
+      // Allow requests with no origin (mobile apps, Postman, etc.)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+    // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET'],
+    // allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type'],
+    maxAge: 86400, // 24 hours
+  };
+
+  app.use(cors(corsOptions));
+
+  // General rate limiter
+  const generalLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 1000, // Limit each IP to 1000 requests per windowMs
+    message: 'Too many requests from this IP, please try again later.',
+    standardHeaders: true,
+    legacyHeaders: false,
+  });
+
+  app.use(generalLimiter);
+}
+
+/**
+ * Creates a strict rate limiter for API endpoints
+ */
+export function createApiRateLimiter() {
+  return rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    message: 'Too many API requests from this IP, please try again later.',
+    standardHeaders: true,
+    legacyHeaders: false,
+    skip: (req) => {
+      // Skip rate limiting in development
+      return process.env['NODE_ENV'] === 'development';
+    },
+  });
+}
