@@ -30,17 +30,18 @@ export class ContentCreditsComponent {
     @if (href()) {
       <a class="link" [href]="href()" target="_blank">{{ to() }}</a>
     } @else {
-      <span class="sp-left">{{ to() }}</span>
+      <span>{{ to() }}</span>
     }
     @if (note()) {
-      <span>—</span>
-      <span class="sp-left">{{ note() }}</span>
+      <span class="separator">—</span>
+      <span>{{ note() }}</span>
     }
   `,
   styles: [
     `
-      .sp-left {
+      .separator {
         margin-left: 0.5rem;
+        margin-right: 0.5rem;
       }
     `,
   ],
