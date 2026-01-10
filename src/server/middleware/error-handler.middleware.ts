@@ -60,11 +60,16 @@ export const errorHandler: ErrorRequestHandler = (
 };
 
 /**
- * Middleware to handle 404 errors
+ * Middleware to handle 404 errors. Returns a simple JSON response indicating
+ * that the requested route was not found.
  */
 export function notFoundHandler(req: Request, res: Response, next: NextFunction): void {
-  const error = new AppError(404, `Route ${req.originalUrl} not found`);
-  next(error);
+  // Returns a simple JSON response indicating that the requested route was not found.
+  // Do no print a stack trace for 404 errors.
+  res.status(404).json({
+    status: 'error',
+    message: 'Route not found',
+  });
 }
 
 /**
