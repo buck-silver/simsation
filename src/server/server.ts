@@ -6,13 +6,17 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import { join } from 'node:path';
+import { logger } from './utils/logger';
 import express from 'express';
 import timeout from 'express-timeout-handler';
 import { createSimsRouter } from './routes/sims.routes';
 import { configureSecurityMiddleware } from './middleware/security.middleware';
+import { withRedirect } from './middleware/redirect/with-redirect.middleware';
+import REDIRECT_CONFIG from './config/redirect.config';
 import { errorHandler, notFoundHandler } from './middleware/error-handler.middleware';
 import { validateEnvironment } from './utils/validate-env';
-import { logger } from './utils/logger';
+
+logger.info('Starting server...');
 
 // Validate environment variables before starting
 validateEnvironment();
@@ -43,9 +47,6 @@ app.use(
   })
 );
 
-/**
- * Body parsing with size limits
- */
 app.use(express.json({ limit: '100kb' }));
 app.use(express.urlencoded({ extended: true, limit: '100kb' }));
 
@@ -66,9 +67,21 @@ app.use(
 );
 
 /**
+ * Redirect middleware for legacy routes. Place this before the Angular SSR
+ * handler.
+ */
+app.use(withRedirect(REDIRECT_CONFIG));
+
+/**
  * Handle all other requests by rendering the Angular application.
+ * Skip Angular SSR for API routes.
  */
 app.use((req, res, next) => {
+  // Skip Angular SSR for API routes - let them fall through to 404 handler
+  if (req.url.startsWith('/api')) {
+    return next();
+  }
+
   angularApp
     .handle(req)
     .then((response) =>
