@@ -8,7 +8,7 @@ export const CHALLENGES_NAV: NavMain = {
 
 export const CHALLENGES_ROUTES: Routes = [
   {
-    path: 'a-different-kind-of-jam',
+    path: 'a-different-kind-of-jam-challenge',
     title: 'A Different Kind of Jam Challenge',
     loadComponent: () =>
       import('./posts/a-different-kind-of-jam-challenge.page'),
