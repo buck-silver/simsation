@@ -21,10 +21,16 @@
       "format": "svg"
     }
   ],
+  "vsicons.associations.folders": [
+    {
+      "icon": "changesets",
+      "extensions": ["migrations", "_migrations"],
+      "format": "svg"
+    },
+  ],
   "files.exclude": {
     "**/.angular": false,
     "node_modules": true
   },
   "editor.codeActionsOnSave": {},
-  "angular.enable-strict-mode-prompt": false
 }
