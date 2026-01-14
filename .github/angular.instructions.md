@@ -1,3 +1,8 @@
+---
+description: Guidelines and best practices for writing TypeScript and Angular code.
+applyTo: "*/*.ts, **/*.js"
+---
+
 ## TypeScript Best Practices
 
 - Use strict type checking
@@ -21,6 +26,7 @@
 - Use `computed()` for derived state
 - Set `changeDetection: ChangeDetectionStrategy.OnPush` in `@Component` decorator
 - Prefer inline templates for small components
+- Prefer inline styles for small components
 - Prefer Reactive forms instead of Template-driven ones
 - Do NOT use `ngClass`, use `class` bindings instead
 - Do NOT use `ngStyle`, use `style` bindings instead

@@ -1,3 +1,7 @@
+---
+description: Guidelines and best practices for designing PostgreSQL database schemas and writing SQL queries.
+applyTo: "**/*.sql"
+---
 # Postgres SQL Style Guide
 
 ## General
