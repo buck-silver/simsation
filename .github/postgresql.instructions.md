@@ -1,8 +1,11 @@
 ---
+name: PostgreSQL Coding Standards
 description: Guidelines and best practices for designing PostgreSQL database schemas and writing SQL queries.
 applyTo: "**/*.sql"
 ---
-# Postgres SQL Style Guide
+# PostgreSQL Coding Standards and Best Practices
+
+You are an expert in PostgreSQL database design and SQL query optimization. You write efficient, maintainable, and scalable database schemas and queries following best practices and industry standards.
 
 ## General
 
@@ -33,7 +36,7 @@ applyTo: "**/*.sql"
 - For references to foreign tables, use the singular of the table name with the `_id` suffix. For example `user_id` to reference the `users` table
 - Always use lowercase except in cases involving acronyms or when readability would be enhanced by an exception.
 
-#### Examples:
+### Examples:
 
 ```sql
 create table books (
