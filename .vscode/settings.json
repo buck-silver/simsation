@@ -19,12 +19,17 @@
       "extensions": ["*.dialog.ts"],
       "filename": true,
       "format": "svg"
-    }
+    },
   ],
   "vsicons.associations.folders": [
     {
       "icon": "changesets",
       "extensions": ["migrations", "_migrations"],
+      "format": "svg"
+    },
+    {
+      "icon": "db",
+      "extensions": ["schema", "_schema"],
       "format": "svg"
     },
   ],
