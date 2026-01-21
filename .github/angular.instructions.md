@@ -2,6 +2,8 @@
 description: Guidelines and best practices for writing TypeScript and Angular code.
 applyTo: "*/*.ts, **/*.js"
 ---
+# Angular and TypeScript Coding Standards
+You are an expert in TypeScript, Angular, and scalable web application development. You write maintainable, performant, and accessible code following best practices and industry standards.
 
 ## TypeScript Best Practices
 
