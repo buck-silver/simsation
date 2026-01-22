@@ -3,11 +3,11 @@ import { HttpRedirectStatus } from '../../lib/http/http-status.enum';
 
 const REDIRECT_CONFIG: RedirectConfig = {
   // Pages
-  // | /about-me                                                                                 | page      | About Me
-  // | /contact-me                                                                               | page      | Contact me!
-  // | /donate                                                                                   | page      | Donate
-  // | /latest-streams-new-apps                                                                  | page      | Latest Posts & New Apps
-  // | /sims-4-challenges-generators                                                             | page      | Sims 4 Challenges + Generators
+  // | /about-me                     | page | About Me
+  // | /contact-me                   | page | Contact me!
+  // | /donate                       | page | Donate
+  // | /latest-streams-new-apps      | page | Latest Posts & New Apps
+  // | /sims-4-challenges-generators | page | Sims 4 Challenges + Generators
 
   // Home page
   '/about-me': {
@@ -36,11 +36,11 @@ const REDIRECT_CONFIG: RedirectConfig = {
   },
 
   // Clips
-  // | /clip-from-twitch-5                                                                       | post      | Clip From Twitch #5
-  // | /clip-from-twitch-january-12-2021                                                         | post      | Clip From Twitch #2
-  // | /clip-from-twitch-january-13-2021                                                         | post      | Clip From Twitch #3
-  // | /clip-from-twitch-january-15-2021                                                         | post      | Clip From Twitch #4
-  // | /clip-from-twitch-january-7-2021                                                          | post      | Clip From Twitch #1
+  // | /clip-from-twitch-5               | post | Clip From Twitch #5
+  // | /clip-from-twitch-january-12-2021 | post | Clip From Twitch #2
+  // | /clip-from-twitch-january-13-2021 | post | Clip From Twitch #3
+  // | /clip-from-twitch-january-15-2021 | post | Clip From Twitch #4
+  // | /clip-from-twitch-january-7-2021  | post | Clip From Twitch #1
   '/clip-from-twitch-5': {
     target: '/',
     status: HttpRedirectStatus.MovedPermanently,
@@ -63,11 +63,11 @@ const REDIRECT_CONFIG: RedirectConfig = {
   },
 
   // Apps
-  // | /every-room-is-a-different-colour                                                         | post      | Every Room Is A Different Colour
-  // | /every-room-is-a-different-pack                                                           | post      | Every Room Is A Different Pack
-  // | /random-achievement-generator                                                             | post      | Random Achievement Generator
-  // | /random-build-generator                                                                   | post      | Random Build Generator
-  // | /update-random-build-generator                                                            | post      | UPDATE Random Build Generator
+  // | /every-room-is-a-different-colour | post | Every Room Is A Different Colour
+  // | /every-room-is-a-different-pack   | post | Every Room Is A Different Pack
+  // | /random-achievement-generator     | post | Random Achievement Generator
+  // | /random-build-generator           | post | Random Build Generator
+  // | /update-random-build-generator    | post | UPDATE Random Build Generator
   '/every-room-is-a-different-colour': {
     target: '/apps/sims-room-color-randomizer',
     status: HttpRedirectStatus.MovedPermanently,
@@ -90,22 +90,22 @@ const REDIRECT_CONFIG: RedirectConfig = {
   },
 
   // Challenges
-  // | /100-baby-challenge                                                                       | post      | 100 Baby Challenge
-  // | /a-different-kind-of-jam-challenge                                                        | post      | A Different Kind of Jam Challenge
-  // | /asylum-challenge                                                                         | post      | Asylum Challenge
-  // | /black-widow-challenge                                                                    | post      | Black Widow Challenge
-  // | /bunker-legacy-challenge                                                                  | post      | Bunker Legacy Challenge
-  // | /career-legacy-challenge                                                                  | post      | Career Legacy Challenge
-  // | /cowplant-farm-challenge                                                                  | post      | Cowplant Farm Challenge
-  // | /cult-or-commune-challenge                                                                | post      | Cult or Commune Challenge
-  // | /decades-challenge                                                                        | post      | Decades Challenge
-  // | /isbi-challenge                                                                           | post      | ISBI Challenge
-  // | /legacy-challenge-simple-variations                                                       | post      | Legacy Challenge & Simple Variations
-  // | /not-so-berry-challenge                                                                   | post      | Not So Berry Challenge
-  // | /not-so-berry-challenge-2                                                                 | post      | Not So Berry Challenge #2
-  // | /off-the-grid-challenge                                                                   | post      | Off The Grid Challenge
-  // | /rags-to-riches-mega-challenge                                                            | post      | Rags to Riches Mega Challenge
-  // | /vampire-dynasty-challenge                                                                | post      | Vampire Dynasty Challenge
+  // | /100-baby-challenge                 | post | 100 Baby Challenge
+  // | /a-different-kind-of-jam-challenge  | post | A Different Kind of Jam Challenge
+  // | /asylum-challenge                   | post | Asylum Challenge
+  // | /black-widow-challenge              | post | Black Widow Challenge
+  // | /bunker-legacy-challenge            | post | Bunker Legacy Challenge
+  // | /career-legacy-challenge            | post | Career Legacy Challenge
+  // | /cowplant-farm-challenge            | post | Cowplant Farm Challenge
+  // | /cult-or-commune-challenge          | post | Cult or Commune Challenge
+  // | /decades-challenge                  | post | Decades Challenge
+  // | /isbi-challenge                     | post | ISBI Challenge
+  // | /legacy-challenge-simple-variations | post | Legacy Challenge & Simple Variations
+  // | /not-so-berry-challenge             | post | Not So Berry Challenge
+  // | /not-so-berry-challenge-2           | post | Not So Berry Challenge #2
+  // | /off-the-grid-challenge             | post | Off The Grid Challenge
+  // | /rags-to-riches-mega-challenge      | post | Rags to Riches Mega Challenge
+  // | /vampire-dynasty-challenge          | post | Vampire Dynasty Challenge
   '/100-baby-challenge':{
     target: '/challenges/one-hundred-baby-challenge',
     status: HttpRedirectStatus.MovedPermanently,
@@ -172,11 +172,11 @@ const REDIRECT_CONFIG: RedirectConfig = {
   },
 
   // Shells
-  // | /earthship-shell                                                                          | post      | Earthship Shell
-  // | /igloo-shell                                                                              | post      | Igloo Shell
-  // | /lighthouse-shell                                                                         | post      | Lighthouse Shell
-  // | /penthouse-shell                                                                          | post      | Penthouse Shell
-  // | /shipping-container-shell                                                                 | post      | Shipping Container Shell
+  // | /earthship-shell          | post | Earthship Shell
+  // | /igloo-shell              | post | Igloo Shell
+  // | /lighthouse-shell         | post | Lighthouse Shell
+  // | /penthouse-shell          | post | Penthouse Shell
+  // | /shipping-container-shell | post | Shipping Container Shell
   '/earthship-shell': {
     target: '/shells',
     status: HttpRedirectStatus.MovedPermanently,
