@@ -10,7 +10,9 @@
  *       - name:           Pack name
  *       - icon:           Pack icon filename
  *       - type:           Pack type (e.g., Expansion Pack)
- *       - architectures:  Array of architecture phrases (from sims4.architectures_br)
+ *       - architectures:  Array of architectures (from sims4.architectures_br)
+ *           - name property is either the architecture_name or overriden by display_name
+ *           - phrase property is from sims4.architectures_br
  *       - lot_challenges: Array of lot challenge phrases (from sims4.lot_challenges_br)
  *       - lot_traits:     Array of lot trait phrases (from sims4.lot_traits_br)
  *       - specials:       Array of special phrases (from sims4.specials_br)
@@ -34,11 +36,11 @@ select
         'name', pack.name,
         'icon', pack.icon,
         'type', pack.type,
-        'architectures', coalesce(arch.phrases, array[]::text[]),
-        'lot_challenges', coalesce(lc.phrases, array[]::text[]),
-        'lot_traits', coalesce(lt.phrases, array[]::text[]),
-        'specials', coalesce(sp.phrases, array[]::text[]),
-        'worlds', coalesce(w.phrases, array[]::text[]),
+        'architectures', coalesce(ar.items, '[]'::jsonb),
+        'lot_challenges', coalesce(lc.items, array[]::text[]),
+        'lot_traits', coalesce(lt.items, array[]::text[]),
+        'specials', coalesce(sp.items, array[]::text[]),
+        'worlds', coalesce(w.items, array[]::text[]),
         'enabled', true,
         'group', case pack.type
           when 'Base Game' then 1
@@ -57,14 +59,17 @@ from
 
   -- Architectures (via sims4.architectures_br)
   left join lateral (
-    select array_agg(ab.phrase order by ab.id) as phrases
+    select jsonb_agg(jsonb_build_object(
+      'name', coalesce(ab.display_name, ab.architecture_name),
+      'phrase', coalesce(ab.phrase, ab.architecture_name)
+    ) order by ab.id) as items
     from sims4.architectures_br ab
     where ab.pack_code = pack.code
-  ) arch on true
+  ) ar on true
 
   -- Lot Challenges (via sims4.lot_challenges -> sims4.lot_challenges_br)
   left join lateral (
-    select array_agg(lcb.phrase order by lcb.id) as phrases
+    select array_agg(lcb.phrase order by lcb.id) as items
     from sims4.lot_challenges lc
     join sims4.lot_challenges_br lcb on lcb.lot_challenge_name = lc.name
     where lc.pack_code = pack.code
@@ -72,7 +77,7 @@ from
 
   -- Lot Traits (via sims4.lot_traits -> sims4.lot_traits_br)
   left join lateral (
-    select array_agg(ltb.phrase order by ltb.id) as phrases
+    select array_agg(ltb.phrase order by ltb.id) as items
     from sims4.lot_traits lt
     join sims4.lot_traits_br ltb on ltb.lot_trait_name = lt.name
     where lt.pack_code = pack.code
@@ -80,14 +85,14 @@ from
 
   -- Specials (via sims4.specials_br)
   left join lateral (
-    select array_agg(sb.phrase order by sb.id) as phrases
+    select array_agg(sb.phrase order by sb.id) as items
     from sims4.specials_br sb
     where sb.pack_code = pack.code
   ) sp on true
 
   -- Worlds (via sims4.worlds -> sims4.worlds_br)
   left join lateral (
-    select array_agg(wb.phrase order by wb.id) as phrases
+    select array_agg(wb.phrase order by wb.id) as items
     from sims4.worlds w
     join sims4.worlds_br wb on wb.world_name = w.name
     where w.pack_code = pack.code
