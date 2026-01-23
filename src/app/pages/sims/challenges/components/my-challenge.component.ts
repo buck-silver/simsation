@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
-import { PageModule } from '../../../core/page/page.module';
-import { PageDirective } from '../../../core/page/components/page.directive';
-import { NavTableComponent } from '../../../core/navigation/components/nav-table.component';
+import { PageModule } from '../../../../core/page/page.module';
+import { PageDirective } from '../../../../core/page/components/page.directive';
+import { NavTableComponent } from '../../../../core/navigation/components/nav-table.component';
 import { CHALLENGES_ROUTES } from '../challenges.routes';
 import { MatButtonModule } from '@angular/material/button';
 

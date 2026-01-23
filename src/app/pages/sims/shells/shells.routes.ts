@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../../core/navigation/nav';
 
-export const SHELLS_NAV: NavMain = {
+export const NAV: Nav = {
   text: 'Shells',
-  path: 'shells',
+  path: 'sims/shells',
 };
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'shells',
     title: 'Shells | Simsation',
     loadComponent: () => import('./shells.page'),
   },

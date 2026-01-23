@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../core/navigation/nav';
 
-export const HOME_NAV: NavMain = {
+export const NAV: Nav = {
   text: 'Home',
   path: '/',
 };

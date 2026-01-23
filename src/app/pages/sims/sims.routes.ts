@@ -1,7 +1,8 @@
+import { loadNav, type Nav } from '../../core/navigation/nav';
 import type { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import * as shells from './shells/shells.routes';
 
-export const NAV: NavMain = {
+export const NAV: Nav = {
   text: 'Sims',
   path: 'sims',
   children: [
@@ -37,6 +38,7 @@ export const NAV: NavMain = {
         },
       ],
     },
+    ...loadNav(shells.NAV),
     {
       text: 'Achievements',
       path: 'sims/achievements',
@@ -44,10 +46,6 @@ export const NAV: NavMain = {
     {
       text: 'Challenges',
       path: 'sims/challenges',
-    },
-    {
-      text: 'Shells',
-      path: 'sims/shells',
     },
     {
       text: 'Worlds',
@@ -61,6 +59,9 @@ export const ROUTES: Routes = [
     path: 'sims',
     title: 'Sims | Simsation',
     loadComponent: () => import('./sims.page'),
+    children: [
+      ...shells.ROUTES,
+    ]
   },
 ];
 

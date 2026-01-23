@@ -4,7 +4,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { type NavPath } from '../nav-path';
+import { type NavNode } from '../nav';
 
 @Component({
   selector: 'nav[tree]',
@@ -149,14 +149,14 @@ import { type NavPath } from '../nav-path';
   `,
 })
 export class NavTreeComponent {
-  readonly routes = input.required<NavPath[]>();
+  readonly routes = input.required<NavNode[]>();
 
   readonly source = computed(
     () => this.routes().filter((route) => !!route.path || !!route.href)
   );
 
-  childrenAccessor = (node: NavPath) => node.children ?? [];
+  childrenAccessor = (node: NavNode) => node.children ?? [];
 
-  hasChild = (_: number, node: NavPath) =>
+  hasChild = (_: number, node: NavNode) =>
     !!node.children && node.children.length > 0;
 }

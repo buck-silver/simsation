@@ -1,18 +1,10 @@
-import { NavMain } from '../core/navigation/nav-main';
-import { APPS_NAV } from '../pages/apps/apps.routes';
-import { CHALLENGES_NAV } from '../pages/challenges/challenges.routes';
-import { CONTACT_NAV } from '../pages/contact/contact.routes';
-import { HOME_NAV } from '../pages/home/home.routes';
-import { SHELLS_NAV } from '../pages/shells/shells.routes';
+import { loadNav, type Nav } from '../core/navigation/nav';
+import { NAV as home } from '../pages/home/home.routes';
 import { NAV as sims } from '../pages/sims/sims.routes';
-import { WORLDS_NAV } from '../pages/worlds/worlds.routes';
+import { NAV as contact } from '../pages/contact/contact.routes';
 
-export const NAVIGATION_CONFIG: NavMain = [
-  HOME_NAV,
-  sims,
-  APPS_NAV,
-  CHALLENGES_NAV,
-  SHELLS_NAV,
-  WORLDS_NAV,
-  CONTACT_NAV,
+export const NAVIGATION_CONFIG: Nav = [
+  ...loadNav(home),
+  ...loadNav(sims),
+  ...loadNav(contact),
 ];

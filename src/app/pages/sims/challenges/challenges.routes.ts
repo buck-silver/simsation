@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../../core/navigation/nav';
 
-export const CHALLENGES_NAV: NavMain = {
+export const CHALLENGES_NAV: Nav = {
   text: 'Challenges',
   path: 'challenges',
 };
@@ -92,15 +92,10 @@ export const CHALLENGES_ROUTES: Routes = [
 
 export const ROUTES: Routes = [
   {
-    path: '',
-    children: [
-      ...CHALLENGES_ROUTES,
-      {
-        path: '',
-        title: 'Challenges | Simsation',
-        loadComponent: () => import('./challenges.page'),
-      },
-    ],
+    path: 'challenges',
+    title: 'Challenges | Simsation',
+    loadComponent: () => import('./challenges.page'),
+    children: CHALLENGES_ROUTES,
   },
 ];
 

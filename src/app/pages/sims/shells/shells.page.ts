@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { PageDirective } from '../../core/page/components/page.directive';
-import { PageModule } from '../../core/page/page.module';
-import { CarouselComponent } from '../../core/carousel/carousel.component';
+import { PageDirective } from '../../../core/page/components/page.directive';
+import { PageModule } from '../../../core/page/page.module';
+import { CarouselComponent } from '../../../core/carousel/carousel.component';
 import ShellShowcaseComponent from './components/shell-showcase.component';
 
 @Component({

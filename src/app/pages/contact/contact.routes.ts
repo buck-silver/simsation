@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../core/navigation/nav';
 
-export const CONTACT_NAV: NavMain = {
+export const NAV: Nav = {
   text: 'Contact',
   path: 'contact',
 };
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'contact',
     title: 'Contact | Simsation',
     loadComponent: () => import('./contact.page'),
   },

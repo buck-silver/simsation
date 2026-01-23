@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { PageModule } from '../../core/page/page.module';
-import { PageDirective } from '../../core/page/components/page.directive';
+import { PageModule } from '../../../core/page/page.module';
+import { PageDirective } from '../../../core/page/components/page.directive';
 import { WORLDS_ROUTES } from './worlds.routes';
-import { NavTableComponent } from "../../../app/core/navigation/components/nav-table.component";
+import { NavTableComponent } from "../../../core/navigation/components/nav-table.component";
 
 @Component({
   selector: 'worlds-page',

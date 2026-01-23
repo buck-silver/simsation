@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { CarouselComponent } from '../../../core/carousel/carousel.component';
-import { AssetPipe } from '../../../core/pipes/asset.pipe';
+import { CarouselComponent } from '../../../../core/carousel/carousel.component';
+import { AssetPipe } from '../../../../core/pipes/asset.pipe';
 
 @Component({
   selector: 'my-world-showcase',

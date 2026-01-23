@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../../core/navigation/nav';
 
-export const WORLDS_NAV: NavMain = {
+export const WORLDS_NAV: Nav = {
   text: 'Worlds',
   path: 'worlds',
 };
@@ -106,15 +106,10 @@ export const WORLDS_ROUTES: Routes = [
 
 export const ROUTES: Routes = [
   {
-    path: '',
-    children: [
-      ...WORLDS_ROUTES,
-      {
-        path: '',
-        title: 'Worlds | Simsation',
-        loadComponent: () => import('./worlds.page'),
-      },
-    ],
+    path: 'worlds',
+    title: 'Worlds | Simsation',
+    loadComponent: () => import('./worlds.page'),
+    children: WORLDS_ROUTES,
   },
 ];
 

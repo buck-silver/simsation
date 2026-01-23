@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../core/navigation/nav';
 
-export const TEMP_NAV: NavMain = {
+export const NAV: Nav = {
   text: 'Temp',
   path: 'temp',
 };
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'temp',
     title: 'Temp',
     loadComponent: () => import('./temp.page'),
   },

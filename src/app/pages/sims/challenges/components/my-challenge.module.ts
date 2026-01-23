@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PageModule } from '../../../core/page/page.module';
+import { PageModule } from '../../../../core/page/page.module';
+import { ContentModule } from '../../../../core/content/content.module';
 import { MyChallengeComponent } from './my-challenge.component';
-import { ContentModule } from '../../../core/content/content.module';
 
 const resources = [
   PageModule,

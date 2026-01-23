@@ -1,32 +1,12 @@
 import { Routes } from '@angular/router';
+import home from '../pages/home/home.routes';
 import sims from '../pages/sims/sims.routes';
+import contact from '../pages/contact/contact.routes';
 
 export const PAGES_CONFIG: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('../pages/home/home.routes'),
-  },
+  ...home,
   ...sims,
-  {
-    path: 'apps',
-    loadChildren: () => import('../pages/apps/apps.routes'),
-  },
-  {
-    path: 'challenges',
-    loadChildren: () => import('../pages/challenges/challenges.routes'),
-  },
-  {
-    path: 'shells',
-    loadChildren: () => import('../pages/shells/shells.routes'),
-  },
-  {
-    path: 'worlds',
-    loadChildren: () => import('../pages/worlds/worlds.routes'),
-  },
-  {
-    path: 'contact',
-    loadChildren: () => import('../pages/contact/contact.routes'),
-  },
+  ...contact,
   {
     path: '**',
     loadComponent: () => import('../../app/core/page/default/error.page'),

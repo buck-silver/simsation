@@ -13,7 +13,7 @@ import {
   FullscreenOverlayContainer,
   OverlayContainer,
 } from '@angular/cdk/overlay';
-import { provideNavMain } from '../core/navigation/nav-main';
+import { provideNav } from '../core/navigation/nav';
 import { NAVIGATION_CONFIG } from './navigation.config';
 
 export const APP_CONFIG: ApplicationConfig = {
@@ -27,7 +27,7 @@ export const APP_CONFIG: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
-    provideNavMain(NAVIGATION_CONFIG),
+    provideNav(NAVIGATION_CONFIG),
     provideClientHydration(withEventReplay()),
     {
       provide: OverlayContainer,

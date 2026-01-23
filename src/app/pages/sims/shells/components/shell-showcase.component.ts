@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { AssetPipe } from '../../../core/pipes/asset.pipe';
+import { AssetPipe } from '../../../../core/pipes/asset.pipe';
 
 @Component({
   selector: 'shell-showcase',
