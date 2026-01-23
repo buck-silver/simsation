@@ -6,10 +6,6 @@ export const NAV: Nav = {
   path: 'sims/apps',
   children: [
     {
-      text: 'Sims 4 Achievements',
-      path: 'sims/apps/achievements/sims4',
-    },
-    {
       text: 'Sims 4 Random Build Generator',
       path: 'sims/apps/build-randomizer/sims4',
     },
@@ -43,11 +39,6 @@ export const NAV: Nav = {
 };
 
 export const APPS_ROUTES: Routes = [
-  {
-    path: 'achievements',
-    loadChildren: () =>
-      import('../achievements/sims-achievements.routes'),
-  },
   {
     path: 'build-randomizer',
     loadChildren: () =>
