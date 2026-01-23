@@ -7,7 +7,7 @@ import { RoomListService } from './room-list.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AssetPipe } from '../../../core/pipes/asset.pipe';
+import { AssetPipe } from '../../../../core/pipes/asset.pipe';
 
 @Component({
   selector: 'room-list',

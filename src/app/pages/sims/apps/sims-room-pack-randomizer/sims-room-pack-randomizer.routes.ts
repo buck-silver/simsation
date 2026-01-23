@@ -7,8 +7,8 @@ import {
   SIMS_2_PACK_KEY,
   SIMS_3_PACK_KEY,
   SIMS_4_PACK_KEY,
-} from '../../../common/sims/sims-pack-resolver';
-import { provideSimsPack } from '../../../common/sims/sims-pack-cache-token';
+} from '../../../../common/sims/sims-pack-resolver';
+import { provideSimsPack } from '../../../../common/sims/sims-pack-cache-token';
 
 export const ROUTES: Routes = [
   {

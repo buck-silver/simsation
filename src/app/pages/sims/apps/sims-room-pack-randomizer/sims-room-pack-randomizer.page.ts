@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { PageModule } from '../../../core/page/page.module';
-import { PageDirective } from '../../../core/page/components/page.directive';
+import { PageModule } from '../../../../core/page/page.module';
+import { PageDirective } from '../../../../core/page/components/page.directive';
+import { MyActionButtonComponent } from '../../../../common/my-action-button/my-action-button.component';
+import { SimsPackSettingsComponent } from '../../../../common/sims/sims-pack-settings.component';
+import { SimsLogoComponent, SimsLogoVersion } from '../../../../common/sims/sims-logo.component';
 import { RoomListComponent } from './room-list.component';
 import { RoomListService } from './room-list.service';
-import { MyActionButtonComponent } from '../../../common/my-action-button/my-action-button.component';
-import { SimsPackSettingsComponent } from '../../../common/sims/sims-pack-settings.component';
-import { SimsLogoComponent, SimsLogoVersion } from '../../../common/sims/sims-logo.component';
 
 @Component({
   selector: 'sims-room-pack-randomizer-page',

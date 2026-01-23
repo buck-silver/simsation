@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { PageModule } from '../../../core/page/page.module';
-import { PageDirective } from '../../../core/page/components/page.directive';
-import { SimsLogoDirective } from '../../../common/sims/sims-logo.component';
-import { ContentModule } from '../../../core/content/content.module';
+import { PageModule } from '../../../../core/page/page.module';
+import { PageDirective } from '../../../../core/page/components/page.directive';
+import { SimsLogoDirective } from '../../../../common/sims/sims-logo.component';
+import { ContentModule } from '../../../../core/content/content.module';
 
 @Component({
   selector: 'sims-room-pack-randomizer-landing-page',
