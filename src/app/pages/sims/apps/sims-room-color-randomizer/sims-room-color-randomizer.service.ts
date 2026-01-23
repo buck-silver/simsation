@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { randFromArray } from '../../../../lib/math/rand-from-array';
+import { randFromArray } from '../../../../../lib/math/rand-from-array';
 
 type RoomColor = {
   name: string;
