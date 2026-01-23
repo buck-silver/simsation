@@ -7,7 +7,7 @@ import { AssetPipe } from '../../../core/pipes/asset.pipe';
 
 @Component({
   imports: [CommonModule, PageModule, AssetPipe],
-  selector: 'li[sims4-achievement]',
+  selector: 'li[sims-achievement]',
   hostDirectives: [PageDirective],
   host: {
     '[id]': '`a-${data().name}`',
@@ -204,6 +204,6 @@ import { AssetPipe } from '../../../core/pipes/asset.pipe';
     }
   `,
 })
-export class AchievementComponent {
+export class SimsAchievementComponent {
   data = input.required<Sims4Achievement>();
 }

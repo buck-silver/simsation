@@ -6,9 +6,9 @@ import type { Sims4Achievement } from '../../../common/sims/types/sims4-achievem
 import { SimsDataService } from '../../../common/sims/sims-data.service';
 import { preloadImg } from '../../../core/utils/preload-img';
 
-const DATA_KEY = makeStateKey<any>('sims4-achievements-data');
+const DATA_KEY = makeStateKey<any>('sims-achievements-data');
 
-export const sims4AchievementsResolver: ResolveFn<Sims4Achievement[]> = (
+export const simsAchievementsResolver: ResolveFn<Sims4Achievement[]> = (
   route,
   state
 ) => {

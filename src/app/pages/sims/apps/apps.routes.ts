@@ -46,7 +46,7 @@ export const APPS_ROUTES: Routes = [
   {
     path: 'achievements',
     loadChildren: () =>
-      import('../../apps/sims-achievements/sims4-achievements.routes'),
+      import('../achievements/sims-achievements.routes'),
   },
   {
     path: 'build-randomizer',
