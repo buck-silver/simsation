@@ -3,7 +3,7 @@ import {
   inject,
 } from '@angular/core';
 import { TypewriteService } from '../services/typewrite.service';
-import { SimsRandomizerService } from '../services/sims-randomizer.service';
+import { SimsRandomizerService } from '../services/randomizer.service';
 
 @Component({
   selector: 'suggestion',

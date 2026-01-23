@@ -10,8 +10,8 @@ import { SlidingInterval } from '../utils/sliding-interval';
 import {
   SIMS_BUILD_RANDOMIZER_CONFIG,
   type SimsBuildRandomizerConfig,
-} from '../sims-4-build-randomizer-config';
-import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../sims-4-build-randomizer-tokens';
+} from '../build-randomizer-config';
+import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
 
 @Injectable({
   providedIn: 'any',

@@ -6,7 +6,7 @@ import { SimsDataService } from '../../../../common/sims/sims-data.service';
 import {
   SIMS_4_BUILD_RANDOMIZER_COLORS,
   SIMS_4_BUILD_RANDOMIZER_STORE,
-} from './sims-4-build-randomizer-tokens';
+} from './build-randomizer-tokens';
 import type { Sims4BuildRandomizerConfig } from '../../../../common/sims/types/sims4-build-randomizer';
 
 const DATA_KEY = makeStateKey<any>('SIMS_4_BUILD_RANDOMIZER_DATA');

@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { SIMS_4_BUILD_RANDOMIZER_COLORS } from '../sims-4-build-randomizer-tokens';
+import { SIMS_4_BUILD_RANDOMIZER_COLORS } from '../build-randomizer-tokens';
 import { randFromArray } from '../../../../../../lib/math/rand-from-array';
 
 @Injectable({

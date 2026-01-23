@@ -3,7 +3,7 @@ import { SlidingInterval } from '../utils/sliding-interval';
 import {
   SIMS_BUILD_RANDOMIZER_CONFIG,
   type SimsBuildRandomizerConfig,
-} from '../sims-4-build-randomizer-config';
+} from '../build-randomizer-config';
 
 @Injectable({
   providedIn: 'any',

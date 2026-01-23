@@ -1,6 +1,6 @@
 import { Injectable, signal, inject, PLATFORM_ID, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { SimsRandomizerService, Suggestion } from './sims-randomizer.service';
+import { SimsRandomizerService, Suggestion } from './randomizer.service';
 
 type WrittenText = {
   value: string;

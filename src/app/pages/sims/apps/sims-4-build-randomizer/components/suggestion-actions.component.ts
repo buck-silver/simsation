@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { SimsRandomizerService } from '../services/sims-randomizer.service';
+import { SimsRandomizerService } from '../services/randomizer.service';
 
 @Component({
   selector: 'suggestion-actions',

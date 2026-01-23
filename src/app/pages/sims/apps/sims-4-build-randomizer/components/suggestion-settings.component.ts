@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSliderModule } from '@angular/material/slider';
-import { SimsBuildBudgetService } from '../services/sims-build-budget.service';
+import { SimsBuildBudgetService } from '../services/build-budget.service';
 import {
   SimsBuildOccupancyService,
-} from '../services/sims-build-occupancy.service';
+} from '../services/build-occupancy.service';
 import {
   SimsBuildSpecialService,
-} from '../services/sims-build-special.service';
+} from '../services/build-special.service';
 
 @Component({
   imports: [MatDividerModule, MatExpansionModule, MatSliderModule, FormsModule],

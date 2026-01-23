@@ -1,12 +1,12 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { SimsBuildBudgetService } from './sims-build-budget.service';
-import { SimsBuildColorService } from './sims-build-color.service';
-import { SimsBuildLotTraitService } from './sims-build-lot-trait.service';
-import { SimsBuildReactionService } from './sims-build-reaction.service';
-import { SimsBuildOccupancyService } from './sims-build-occupancy.service';
-import { SimsBuildSpecialService } from './sims-build-special.service';
-import { SimsArchitectureService } from './sims-build-architecture.service';
-import { SimsBuildWorldService } from './sims-build-world.service';
+import { SimsBuildBudgetService } from './build-budget.service';
+import { SimsBuildColorService } from './build-color.service';
+import { SimsBuildLotTraitService } from './build-lot-trait.service';
+import { SimsBuildReactionService } from './build-reaction.service';
+import { SimsBuildOccupancyService } from './build-occupancy.service';
+import { SimsBuildSpecialService } from './build-special.service';
+import { SimsArchitectureService } from './build-architecture.service';
+import { SimsBuildWorldService } from './build-world.service';
 import { Stepper, StepperShift } from '../../../../../../lib/utils/stepper';
 
 export type Suggestion = {
