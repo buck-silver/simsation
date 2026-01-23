@@ -1,3 +1,4 @@
+import type { Routes } from '@angular/router';
 import type { NavMain } from '../../core/navigation/nav-main';
 
 export const SIMS_NAV: NavMain = {
@@ -54,3 +55,13 @@ export const SIMS_NAV: NavMain = {
     },
   ],
 };
+
+export const ROUTES: Routes = [
+  {
+    path: '',
+    title: 'Sims | Simsation',
+    loadComponent: () => import('./sims.page'),
+  },
+];
+
+export default ROUTES;
