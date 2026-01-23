@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageModule } from '../../../core/page/page.module';
 import { PageDirective } from '../../../core/page/components/page.directive';
-import { Sims4Achievement } from '../../../common/sims/types/sims4-achievement';
+import { SimsAchievement } from '../../../common/sims/types/sims-achievement';
 import { AssetPipe } from '../../../core/pipes/asset.pipe';
 
 @Component({
@@ -205,5 +205,5 @@ import { AssetPipe } from '../../../core/pipes/asset.pipe';
   `,
 })
 export class SimsAchievementComponent {
-  data = input.required<Sims4Achievement>();
+  data = input.required<SimsAchievement>();
 }

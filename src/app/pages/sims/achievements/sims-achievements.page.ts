@@ -5,7 +5,7 @@ import { PageDirective } from '../../../core/page/components/page.directive';
 import { MyActionButtonComponent } from '../../../common/my-action-button/my-action-button.component';
 import { SimsLogoComponent } from '../../../common/sims/sims-logo.component';
 import { SimsAchievementComponent } from './sims-achievement.component';
-import type { Sims4Achievement } from '../../../common/sims/types/sims4-achievement';
+import type { SimsAchievement } from '../../../common/sims/types/sims-achievement';
 import { randFromArray } from '../../../../lib/math/rand-from-array';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -67,10 +67,10 @@ export class SimsAchievementsPage {
   private data = toSignal(this.route.data);
 
   achievements = computed(
-    () => (this.data()?.['achievements'] ?? []) as Sims4Achievement[]
+    () => (this.data()?.['achievements'] ?? []) as SimsAchievement[]
   );
   
-  showcase = signal<Sims4Achievement | null>(null);
+  showcase = signal<SimsAchievement | null>(null);
 
   randAchievement() {
     const achievement = randFromArray(this.achievements());
@@ -80,7 +80,7 @@ export class SimsAchievementsPage {
     }
   }
 
-  scrollTo(achievement: Sims4Achievement) {
+  scrollTo(achievement: SimsAchievement) {
     document.getElementById(`a-${achievement.name}`)?.scrollIntoView({
       behavior: 'smooth',
       block: 'center',

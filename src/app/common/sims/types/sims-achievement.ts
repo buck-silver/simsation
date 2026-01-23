@@ -1,4 +1,4 @@
-export type Sims4Achievement = {
+export type SimsAchievement = {
   /**
    * The name of the achievement
    */
