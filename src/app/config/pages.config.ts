@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
+import sims from '../pages/sims/sims.routes';
 
 export const PAGES_CONFIG: Routes = [
   {
     path: '',
     loadChildren: () => import('../pages/home/home.routes'),
   },
+  ...sims,
   {
     path: 'apps',
     loadChildren: () => import('../pages/apps/apps.routes'),
