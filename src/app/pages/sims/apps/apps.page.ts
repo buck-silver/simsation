@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { PageDirective } from '../../core/page/components/page.directive';
-import { PageModule } from '../../core/page/page.module';
-import { ContentModule } from '../../core/content/content.module';
+import { PageDirective } from '../../../core/page/components/page.directive';
+import { PageModule } from '../../../core/page/page.module';
+import { ContentModule } from '../../../core/content/content.module';
 
 type AppCard = {
   title: string;

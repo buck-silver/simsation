@@ -1,6 +1,6 @@
 import { loadNav, type Nav } from '../../core/navigation/nav';
 import type { Routes } from '@angular/router';
-import * as apps from '../apps/apps.routes';
+import * as apps from './apps/apps.routes';
 import * as challenges from './challenges/challenges.routes';
 import * as shells from './shells/shells.routes';
 import * as worlds from './worlds/worlds.routes';

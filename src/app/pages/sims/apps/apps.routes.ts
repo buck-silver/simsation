@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import type { Nav } from '../../core/navigation/nav';
+import type { Nav } from '../../../core/navigation/nav';
 
 export const NAV: Nav = {
   text: 'Apps',
@@ -46,22 +46,22 @@ export const APPS_ROUTES: Routes = [
   {
     path: 'achievements',
     loadChildren: () =>
-      import('./sims-achievements/sims4-achievements.routes'),
+      import('../../apps/sims-achievements/sims4-achievements.routes'),
   },
   {
     path: 'build-randomizer',
     loadChildren: () =>
-      import('./sims-4-build-randomizer/sims-4-build-randomizer.routes'),
+      import('../../apps/sims-4-build-randomizer/sims-4-build-randomizer.routes'),
   },
   {
     path: 'room-color-randomizer',
     loadChildren: () =>
-      import('./sims-room-color-randomizer/sims-room-color-randomizer.routes'),
+      import('../../apps/sims-room-color-randomizer/sims-room-color-randomizer.routes'),
   },
   {
     path: 'room-pack-randomizer',
     loadChildren: () =>
-      import('./sims-room-pack-randomizer/sims-room-pack-randomizer.routes'),
+      import('../../apps/sims-room-pack-randomizer/sims-room-pack-randomizer.routes'),
   },
 ];
 
