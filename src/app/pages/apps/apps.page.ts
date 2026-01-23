@@ -253,7 +253,7 @@ export default class AppsPage {
       description:
         'Serves up randomized suggestions for lot type, style, budget, and more. Perfect for sparking ideas and pushing your creative limits.',
       emoji: '🏠',
-      route: './sims-4-random-build-generator',
+      route: './sims/build-randomizer/sims4',
       tag: 'Building',
     },
     {
@@ -261,7 +261,7 @@ export default class AppsPage {
       description:
         'Randomly selects achievements for you to chase — from quirky to challenging. Keeps your gameplay fresh and focused.',
       emoji: '🏆',
-      route: './sims-4-achievements',
+      route: './sims/achievements/sims4',
       tag: 'Gameplay',
     },
     {
@@ -269,7 +269,7 @@ export default class AppsPage {
       description:
         'Design a home where each room follows a completely different color scheme. A visual adventure with wild, wonderful colors.',
       emoji: '🎨',
-      route: './sims-room-color-randomizer',
+      route: './sims/room-color-randomizer',
       tag: 'Building',
     },
     {
@@ -277,7 +277,7 @@ export default class AppsPage {
       description:
         'Build a house where each room uses a different pack. Rediscover forgotten items and get creative with unexpected combinations.',
       emoji: '🧩',
-      route: './sims-room-pack-randomizer',
+      route: './sims/room-pack-randomizer',
       tag: 'Building',
     },
   ];

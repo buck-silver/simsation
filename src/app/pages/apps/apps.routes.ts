@@ -1,42 +1,41 @@
 import { Routes } from '@angular/router';
-import type { NavMain } from '../../core/navigation/nav-main';
+import type { Nav } from '../../core/navigation/nav';
 
-export const APPS_NAV: NavMain = {
+export const NAV: Nav = {
   text: 'Apps',
-  path: 'apps',
+  path: 'sims/apps',
   children: [
     {
       text: 'Sims 4 Achievements',
-      path: 'apps/sims-4-achievements',
+      path: 'sims/apps/achievements/sims4',
     },
     {
       text: 'Sims 4 Random Build Generator',
-      path: 'apps/sims-4-random-build-generator',
+      path: 'sims/apps/build-randomizer/sims4',
     },
     {
       text: 'Every Room is a Different Color',
-      path: 'apps/sims-room-color-randomizer',
+      path: 'sims/apps/room-color-randomizer',
     },
     {
       text: 'Every Room is a Different Pack',
-      path: 'apps/sims-room-pack-randomizer',
+      path: 'sims/apps/room-pack-randomizer',
       children: [
         {
           text: 'Sims 4',
-          path: 'apps/sims-room-pack-randomizer/sims-4',
+          path: 'sims/apps/room-pack-randomizer/sims4',
         },
-
         {
           text: 'Sims 3',
-          path: 'apps/sims-room-pack-randomizer/sims-3',
+          path: 'sims/apps/room-pack-randomizer/sims3',
         },
         {
           text: 'Sims 2',
-          path: 'apps/sims-room-pack-randomizer/sims-2',
+          path: 'sims/apps/room-pack-randomizer/sims2',
         },
         {
           text: 'Sims 1',
-          path: 'apps/sims-room-pack-randomizer/sims-1',
+          path: 'sims/apps/room-pack-randomizer/sims1',
         },
       ],
     },
@@ -45,22 +44,22 @@ export const APPS_NAV: NavMain = {
 
 export const APPS_ROUTES: Routes = [
   {
-    path: 'sims-4-achievements',
+    path: 'achievements',
     loadChildren: () =>
-      import('./sims-4-achievements/sims-4-achievements.routes'),
+      import('./sims-achievements/sims4-achievements.routes'),
   },
   {
-    path: 'sims-4-random-build-generator',
+    path: 'build-randomizer',
     loadChildren: () =>
       import('./sims-4-build-randomizer/sims-4-build-randomizer.routes'),
   },
   {
-    path: 'sims-room-color-randomizer',
+    path: 'room-color-randomizer',
     loadChildren: () =>
       import('./sims-room-color-randomizer/sims-room-color-randomizer.routes'),
   },
   {
-    path: 'sims-room-pack-randomizer',
+    path: 'room-pack-randomizer',
     loadChildren: () =>
       import('./sims-room-pack-randomizer/sims-room-pack-randomizer.routes'),
   },
@@ -68,15 +67,10 @@ export const APPS_ROUTES: Routes = [
 
 export const ROUTES: Routes = [
   {
-    path: '',
-    children: [
-      ...APPS_ROUTES,
-      {
-        path: '',
-        title: 'Apps | Simsation',
-        loadComponent: () => import('./apps.page'),
-      },
-    ],
+    path: 'apps',
+    title: 'Apps | Simsation',
+    loadComponent: () => import('./apps.page'),
+    children: APPS_ROUTES,
   },
 ];
 

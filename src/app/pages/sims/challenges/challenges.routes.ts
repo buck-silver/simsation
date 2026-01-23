@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import type { Nav } from '../../../core/navigation/nav';
 
-export const CHALLENGES_NAV: Nav = {
+export const NAV: Nav = {
   text: 'Challenges',
   path: 'challenges',
 };
