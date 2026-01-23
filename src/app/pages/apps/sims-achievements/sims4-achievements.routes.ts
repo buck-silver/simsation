@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { Sims4AchievementsPage } from './sims-4-achievements.page';
-import { sims4AchievementsResolver } from './sims-4-achievements.resolver';
+import { Sims4AchievementsPage } from './sims4-achievements.page';
+import { sims4AchievementsResolver } from './sims4-achievements.resolver';
 
 export const ROUTES: Routes = [
   {

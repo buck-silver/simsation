@@ -7,10 +7,10 @@ import type { SimsPack } from './types/sims-pack';
 import { SIMS_PACK_STORE } from './sims-pack-cache-token';
 import { preloadImg } from '../../core/utils/preload-img';
 
-export const SIMS_1_PACK_KEY = makeStateKey<any>('SIMS_1_PACK_DATA');
-export const SIMS_2_PACK_KEY = makeStateKey<any>('SIMS_2_PACK_DATA');
-export const SIMS_3_PACK_KEY = makeStateKey<any>('SIMS_3_PACK_DATA');
-export const SIMS_4_PACK_KEY = makeStateKey<any>('SIMS_4_PACK_DATA');
+export const SIMS_1_PACK_KEY = makeStateKey<any>('SIMS1_PACK_DATA');
+export const SIMS_2_PACK_KEY = makeStateKey<any>('SIMS2_PACK_DATA');
+export const SIMS_3_PACK_KEY = makeStateKey<any>('SIMS3_PACK_DATA');
+export const SIMS_4_PACK_KEY = makeStateKey<any>('SIMS4_PACK_DATA');
 
 export const simsPackResolver: ResolveFn<SimsPack[]> = (route, state) => {
   const store = inject(SIMS_PACK_STORE);
@@ -29,7 +29,7 @@ export const simsPackResolver: ResolveFn<SimsPack[]> = (route, state) => {
     preloadImg(data, (pack) => pack.icon, platformId);
     return data;
   } else {
-    return dataService.findPacks(endpoint).pipe(
+    return dataService.getPacks(endpoint).pipe(
       tap((data) => {
         transferState.set(stateKey, data);
         store.data.set(data);

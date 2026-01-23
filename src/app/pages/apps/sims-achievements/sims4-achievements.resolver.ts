@@ -2,11 +2,11 @@ import { ResolveFn } from '@angular/router';
 import { inject, PLATFORM_ID } from '@angular/core';
 import { TransferState, makeStateKey } from '@angular/core';
 import { tap } from 'rxjs';
-import type { Sims4Achievement } from '../../../common/sims/types/sims-4-achievement';
+import type { Sims4Achievement } from '../../../common/sims/types/sims4-achievement';
 import { SimsDataService } from '../../../common/sims/sims-data.service';
 import { preloadImg } from '../../../core/utils/preload-img';
 
-const DATA_KEY = makeStateKey<any>('sims-4-achievements-data');
+const DATA_KEY = makeStateKey<any>('sims4-achievements-data');
 
 export const sims4AchievementsResolver: ResolveFn<Sims4Achievement[]> = (
   route,
@@ -22,7 +22,7 @@ export const sims4AchievementsResolver: ResolveFn<Sims4Achievement[]> = (
     preloadImg(data, (achievement) => achievement.icon, platformId);
     return data;
   } else {
-    return dataService.findAchievements().pipe(
+    return dataService.getAchievements('sims4').pipe(
       tap((data) => {
         transferState.set(DATA_KEY, data);
         preloadImg(data, (achievement) => achievement.icon, platformId);

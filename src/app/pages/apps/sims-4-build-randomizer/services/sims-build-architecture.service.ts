@@ -1,20 +1,20 @@
 import { Injectable, computed, inject, type Signal } from '@angular/core';
 import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../sims-4-build-randomizer-tokens';
-import type { Sims4BuildRandomizerFragment } from '../../../../common/sims/types/sims-4-build-randomizer';
+import type { Sims4BuildRandomizerArchitecture } from '../../../../common/sims/types/sims4-build-randomizer';
 import { randFromArray } from '../../../../../lib/math/rand-from-array';
 
 @Injectable({
   providedIn: 'any',
 })
-export class SimsBuildStyleService {
+export class SimsArchitectureService {
   private store = inject(SIMS_4_BUILD_RANDOMIZER_STORE);
 
-  private styles: Signal<Sims4BuildRandomizerFragment[]> = computed(() => {
+  private styles: Signal<Sims4BuildRandomizerArchitecture[]> = computed(() => {
     console.log('Computing enabled build styles from packs');
     const styles = this.store
       .listedByEnabled()
-      .reduce<Sims4BuildRandomizerFragment[]>((arr, pack) => {
-        return arr.concat(pack.build_styles);
+      .reduce<Sims4BuildRandomizerArchitecture[]>((arr, pack) => {
+        return arr.concat(pack.architectures);
       }, []);
     return styles;
   });
@@ -23,7 +23,7 @@ export class SimsBuildStyleService {
     let style = '';
     let suggestion = randFromArray(this.styles());
     if (suggestion) {
-      style = ` ${!useFragment ? suggestion.name : suggestion.suggestion}`;
+      style = ` ${!useFragment ? suggestion.name : suggestion.phrase}`;
     } else {
       style = ' a home';
     }

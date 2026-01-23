@@ -4,14 +4,14 @@ import { PageModule } from '../../../core/page/page.module';
 import { PageDirective } from '../../../core/page/components/page.directive';
 import { MyActionButtonComponent } from '../../../common/my-action-button/my-action-button.component';
 import { SimsLogoComponent } from '../../../common/sims/sims-logo.component';
-import { AchievementComponent } from './sims-4-achievement.component';
-import type { Sims4Achievement } from '../../../common/sims/types/sims-4-achievement';
+import { AchievementComponent } from './sims4-achievement.component';
+import type { Sims4Achievement } from '../../../common/sims/types/sims4-achievement';
 import { randFromArray } from '../../../../lib/math/rand-from-array';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'sims-4-achievements-page',
+  selector: 'sims4-achievements-page',
   imports: [
     CommonModule,
     PageModule,
@@ -29,7 +29,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
       <ul class="achievement-list">
         @for (achievement of achievements(); track achievement) {
           <li
-            sims-4-achievement
+            sims4-achievement
             [data]="achievement"
             [class.showcase]="achievement.name === showcase()?.name"
           ></li>
@@ -63,10 +63,13 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class Sims4AchievementsPage {
   private route = inject(ActivatedRoute);
+
   private data = toSignal(this.route.data);
+
   achievements = computed(
     () => (this.data()?.['achievements'] ?? []) as Sims4Achievement[]
   );
+  
   showcase = signal<Sims4Achievement | null>(null);
 
   randAchievement() {

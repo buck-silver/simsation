@@ -5,7 +5,7 @@ import { SimsBuildLotTraitService } from './sims-build-lot-trait.service';
 import { SimsBuildReactionService } from './sims-build-reaction.service';
 import { SimsBuildOccupancyService } from './sims-build-occupancy.service';
 import { SimsBuildSpecialService } from './sims-build-special.service';
-import { SimsBuildStyleService } from './sims-build-style.service';
+import { SimsArchitectureService } from './sims-build-architecture.service';
 import { SimsBuildWorldService } from './sims-build-world.service';
 import { Stepper, StepperShift } from '../../../../../lib/utils/stepper';
 
@@ -19,13 +19,13 @@ export type Suggestion = {
 })
 export class SimsRandomizerService {
   private stepper: Stepper<Suggestion> = new Stepper();
+  private buildArchitecture = inject(SimsArchitectureService);
   private buildBudget = inject(SimsBuildBudgetService);
   private buildColor = inject(SimsBuildColorService);
   private buildLotTrait = inject(SimsBuildLotTraitService);
   private buildOccupancy = inject(SimsBuildOccupancyService);
   private buildReaction = inject(SimsBuildReactionService);
   private buildSpecial = inject(SimsBuildSpecialService);
-  private buildStyle = inject(SimsBuildStyleService);
   private buildWorld = inject(SimsBuildWorldService);
 
   private _isNavigating: boolean = false;
@@ -72,12 +72,12 @@ export class SimsRandomizerService {
 
   private getBuild(): string {
     const color = this.buildColor.suggest();
-    const style = this.buildStyle.suggest(!color);
+    const architecture = this.buildArchitecture.suggest(!color);
     const world = this.buildWorld.suggest();
     const lotTrait = this.buildLotTrait.suggest();
     const sims = this.buildOccupancy.suggest();
     const budget = this.buildBudget.suggest();
     const specials = this.buildSpecial.suggest();
-    return `Build${color}${style}${world}${lotTrait}${sims}${budget}.${specials}`;
+    return `Build${color}${architecture}${world}${lotTrait}${sims}${budget}.${specials}`;
   }
 }

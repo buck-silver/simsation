@@ -15,7 +15,7 @@ export const ROUTES: Routes = [
     path: '',
     children: [
       {
-        path: 'sims-1',
+        path: 'sims1',
         title: 'Sims 1 | Every Room is a Different Pack | Apps | Simsation',
         component: SimsRoomPackRandomizerPage,
         providers: [provideSimsPack()],
@@ -23,13 +23,13 @@ export const ROUTES: Routes = [
         data: {
           resolveArgs: {
             stateKey: SIMS_1_PACK_KEY,
-            endpoint: 'sims_1',
+            endpoint: 'sims1',
           },
           useLogo: '1',
         },
       },
       {
-        path: 'sims-2',
+        path: 'sims2',
         title: 'Sims 2 | Every Room is a Different Pack | Apps | Simsation',
         component: SimsRoomPackRandomizerPage,
         providers: [provideSimsPack()],
@@ -37,13 +37,13 @@ export const ROUTES: Routes = [
         data: {
           resolveArgs: {
             stateKey: SIMS_2_PACK_KEY,
-            endpoint: 'sims_2',
+            endpoint: 'sims2',
           },
           useLogo: '2',
         },
       },
       {
-        path: 'sims-3',
+        path: 'sims3',
         title: 'Sims 3 | Every Room is a Different Pack | Apps | Simsation',
         component: SimsRoomPackRandomizerPage,
         providers: [provideSimsPack()],
@@ -51,13 +51,13 @@ export const ROUTES: Routes = [
         data: {
           resolveArgs: {
             stateKey: SIMS_3_PACK_KEY,
-            endpoint: 'sims_3',
+            endpoint: 'sims3',
           },
           useLogo: '3',
         },
       },
       {
-        path: 'sims-4',
+        path: 'sims4',
         title: 'Sims 4 | Every Room is a Different Pack | Apps | Simsation',
         component: SimsRoomPackRandomizerPage,
         providers: [provideSimsPack()],
@@ -65,7 +65,7 @@ export const ROUTES: Routes = [
         data: {
           resolveArgs: {
             stateKey: SIMS_4_PACK_KEY,
-            endpoint: 'sims_4',
+            endpoint: 'sims4',
           },
           useLogo: '4',
         },

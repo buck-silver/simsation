@@ -7,12 +7,12 @@ import {
   SIMS_4_BUILD_RANDOMIZER_COLORS,
   SIMS_4_BUILD_RANDOMIZER_STORE,
 } from './sims-4-build-randomizer-tokens';
-import type { Sims4BuildRandomizerCfg } from '../../../common/sims/types/sims-4-build-randomizer';
+import type { Sims4BuildRandomizerConfig } from '../../../common/sims/types/sims4-build-randomizer';
 
 const DATA_KEY = makeStateKey<any>('SIMS_4_BUILD_RANDOMIZER_DATA');
 
 export const sims4BuildRandomizerResolver: ResolveFn<
-  Sims4BuildRandomizerCfg
+  Sims4BuildRandomizerConfig
 > = (route, state) => {
   const store = inject(SIMS_4_BUILD_RANDOMIZER_STORE);
   const colors = inject(SIMS_4_BUILD_RANDOMIZER_COLORS);
@@ -27,7 +27,7 @@ export const sims4BuildRandomizerResolver: ResolveFn<
     store.data.set(data.packs);
     return data;
   } else {
-    return dataService.getSims4BuildRandomizerData().pipe(
+    return dataService.getBuildRandomizerConfig('sims4').pipe(
       tap((data) => {
         transferState.set(DATA_KEY, data);
         colors.push(...data.colors);

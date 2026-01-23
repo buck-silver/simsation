@@ -2,12 +2,12 @@ import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageModule } from '../../../core/page/page.module';
 import { PageDirective } from '../../../core/page/components/page.directive';
-import { Sims4Achievement } from '../../../common/sims/types/sims-4-achievement';
+import { Sims4Achievement } from '../../../common/sims/types/sims4-achievement';
 import { AssetPipe } from '../../../core/pipes/asset.pipe';
 
 @Component({
   imports: [CommonModule, PageModule, AssetPipe],
-  selector: 'li[sims-4-achievement]',
+  selector: 'li[sims4-achievement]',
   hostDirectives: [PageDirective],
   host: {
     '[id]': '`a-${data().name}`',

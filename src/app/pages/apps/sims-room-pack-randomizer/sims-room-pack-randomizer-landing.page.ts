@@ -38,7 +38,7 @@ import { ContentModule } from '../../../core/content/content.module';
         <mat-card
           class="game-card"
           appearance="outlined"
-          [routerLink]="'./sims-4'"
+          [routerLink]="'./sims4'"
         >
           <mat-card-header>
             <img mat-card-image simsLogo [version]="'4'" class="game-logo" />
@@ -50,7 +50,7 @@ import { ContentModule } from '../../../core/content/content.module';
             </p>
           </mat-card-content>
           <mat-card-actions align="end">
-            <a mat-flat-button color="accent" [routerLink]="'./sims-4'">
+            <a mat-flat-button color="accent" [routerLink]="'./sims4'">
               Choose Game
             </a>
           </mat-card-actions>
@@ -59,7 +59,7 @@ import { ContentModule } from '../../../core/content/content.module';
         <mat-card
           class="game-card"
           appearance="outlined"
-          [routerLink]="'./sims-3'"
+          [routerLink]="'./sims3'"
         >
           <mat-card-header>
             <img mat-card-image simsLogo [version]="'3'" class="game-logo" />
@@ -71,7 +71,7 @@ import { ContentModule } from '../../../core/content/content.module';
             </p>
           </mat-card-content>
           <mat-card-actions align="end">
-            <a mat-flat-button color="accent" [routerLink]="'./sims-3'">
+            <a mat-flat-button color="accent" [routerLink]="'./sims3'">
               Choose Game
             </a>
           </mat-card-actions>
@@ -80,7 +80,7 @@ import { ContentModule } from '../../../core/content/content.module';
         <mat-card
           class="game-card"
           appearance="outlined"
-          [routerLink]="'./sims-2'"
+          [routerLink]="'./sims2'"
         >
           <mat-card-header>
             <img mat-card-image simsLogo [version]="'2'" class="game-logo" />
@@ -92,7 +92,7 @@ import { ContentModule } from '../../../core/content/content.module';
             </p>
           </mat-card-content>
           <mat-card-actions align="end">
-            <a mat-flat-button color="accent" [routerLink]="'./sims-2'">
+            <a mat-flat-button color="accent" [routerLink]="'./sims2'">
               Choose Game
             </a>
           </mat-card-actions>
@@ -101,7 +101,7 @@ import { ContentModule } from '../../../core/content/content.module';
         <mat-card
           class="game-card"
           appearance="outlined"
-          [routerLink]="'./sims-1'"
+          [routerLink]="'./sims1'"
         >
           <mat-card-header>
             <img mat-card-image simsLogo [version]="'1'" class="game-logo" />
@@ -113,7 +113,7 @@ import { ContentModule } from '../../../core/content/content.module';
             </p>
           </mat-card-content>
           <mat-card-actions align="end">
-            <a mat-flat-button color="accent" [routerLink]="'./sims-1'">
+            <a mat-flat-button color="accent" [routerLink]="'./sims1'">
               Choose Game
             </a>
           </mat-card-actions>
