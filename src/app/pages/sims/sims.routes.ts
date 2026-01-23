@@ -58,7 +58,7 @@ export const SIMS_NAV: NavMain = {
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'sims',
     title: 'Sims | Simsation',
     loadComponent: () => import('./sims.page'),
   },
