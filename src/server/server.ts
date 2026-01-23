@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import { logger } from './utils/logger';
 import express from 'express';
 import timeout from 'express-timeout-handler';
-import { createSimsRouter } from './routes/sims.routes';
+import { createSimsRouter } from './sims/sims.routes';
 import { configureSecurityMiddleware } from './middleware/security.middleware';
 import { withRedirect } from './middleware/redirect/with-redirect.middleware';
 import REDIRECT_CONFIG from './config/redirect.config';
