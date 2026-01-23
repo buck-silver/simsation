@@ -1,6 +1,6 @@
 import { Injectable, signal, inject, PLATFORM_ID, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { SimsRandomizerService, Suggestion } from './randomizer.service';
+import { BuildRandomizerService, Suggestion } from './build-randomizer.service';
 
 type WrittenText = {
   value: string;
@@ -12,7 +12,7 @@ type WrittenText = {
   providedIn: 'any',
 })
 export class TypewriteService {
-  private readonly svc = inject(SimsRandomizerService);
+  private readonly svc = inject(BuildRandomizerService);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly durationInMs = 2000;

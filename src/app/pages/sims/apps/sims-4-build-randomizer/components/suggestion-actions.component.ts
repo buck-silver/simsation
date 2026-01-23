@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { SimsRandomizerService } from '../services/randomizer.service';
+import { BuildRandomizerService } from '../services/build-randomizer.service';
 
 @Component({
   selector: 'suggestion-actions',
@@ -42,5 +42,5 @@ import { SimsRandomizerService } from '../services/randomizer.service';
   `,
 })
 export class SuggestionActionsComponent {
-  svc = inject(SimsRandomizerService);
+  svc = inject(BuildRandomizerService);
 }

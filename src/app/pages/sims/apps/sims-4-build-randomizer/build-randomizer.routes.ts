@@ -1,24 +1,24 @@
 import { Routes } from '@angular/router';
-import { Sims4BuildRandomizerPage } from './build-randomizer.page';
+import { BuildRandomizerPage } from './build-randomizer.page';
 import { SimsPackService } from '../../../../common/sims/sims-pack.service';
-import { provideSimsBuildRandomizerConfig } from './build-randomizer-config';
+import { provideBuildRandomizerConfig } from './build-randomizer-config';
 import {
-  SIMS_4_BUILD_RANDOMIZER_STORE,
-  SIMS_4_BUILD_RANDOMIZER_COLORS,
+  BUILD_RANDOMIZER_STORE,
+  BUILD_RANDOMIZER_COLORS,
 } from './build-randomizer-tokens';
-import { sims4BuildRandomizerResolver } from './build-randomizer.resolver';
+import { buildRandomizerResolver } from './build-randomizer.resolver';
 import { SIMS_PACK_STORE } from '../../../../common/sims/sims-pack-cache-token';
 
 export const ROUTES: Routes = [
   {
     path: '',
     title: 'Sims 4 Random Build Generator | Apps | Sims | Simsation',
-    component: Sims4BuildRandomizerPage,
+    component: BuildRandomizerPage,
     resolve: {
-      dto: sims4BuildRandomizerResolver
+      dto: buildRandomizerResolver
     },
     providers: [
-      provideSimsBuildRandomizerConfig({
+      provideBuildRandomizerConfig({
         minBudget: 10,
         maxBudget: 100,
         minOccupancy: 1,
@@ -27,15 +27,15 @@ export const ROUTES: Routes = [
         maxSpecials: 10,
       }),
       {
-        provide: SIMS_4_BUILD_RANDOMIZER_STORE,
+        provide: BUILD_RANDOMIZER_STORE,
         useExisting: SimsPackService,
       },
       {
         provide: SIMS_PACK_STORE,
-        useExisting: SIMS_4_BUILD_RANDOMIZER_STORE,
+        useExisting: BUILD_RANDOMIZER_STORE,
       },
       {
-        provide: SIMS_4_BUILD_RANDOMIZER_COLORS,
+        provide: BUILD_RANDOMIZER_COLORS,
         useValue: [],
       },
     ],

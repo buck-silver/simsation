@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { type Observable } from 'rxjs';
 import { Sims4Achievement } from './types/sims4-achievement';
 import type { SimsPack } from './types/sims-pack';
-import type { Sims4BuildRandomizerConfig } from './types/sims4-build-randomizer';
+import type { BuildRandomizerConfig } from './types/build-randomizer';
 
 @Injectable({ providedIn: 'root' })
 export class SimsDataService {
@@ -13,8 +13,8 @@ export class SimsDataService {
     return this.http.get<Sims4Achievement[]>(`/api/sims/achievements/${game}`);
   }
 
-  getBuildRandomizerConfig(game: 'sims4'): Observable<Sims4BuildRandomizerConfig> {
-    return this.http.get<Sims4BuildRandomizerConfig>(
+  getBuildRandomizerConfig(game: 'sims4'): Observable<BuildRandomizerConfig> {
+    return this.http.get<BuildRandomizerConfig>(
       `/api/sims/build-randomizer/${game}`
     );
   }

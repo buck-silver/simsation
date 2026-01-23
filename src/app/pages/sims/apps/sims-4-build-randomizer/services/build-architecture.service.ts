@@ -1,19 +1,19 @@
 import { Injectable, computed, inject, type Signal } from '@angular/core';
-import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
-import type { Sims4BuildRandomizerArchitecture } from '../../../../../common/sims/types/sims4-build-randomizer';
+import { BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
+import type { BuildRandomizerArchitecture } from '../../../../../common/sims/types/build-randomizer';
 import { randFromArray } from '../../../../../../lib/math/rand-from-array';
 
 @Injectable({
   providedIn: 'any',
 })
-export class SimsArchitectureService {
-  private store = inject(SIMS_4_BUILD_RANDOMIZER_STORE);
+export class BuildArchitectureService {
+  private store = inject(BUILD_RANDOMIZER_STORE);
 
-  private styles: Signal<Sims4BuildRandomizerArchitecture[]> = computed(() => {
+  private styles: Signal<BuildRandomizerArchitecture[]> = computed(() => {
     console.log('Computing enabled build styles from packs');
     const styles = this.store
       .listedByEnabled()
-      .reduce<Sims4BuildRandomizerArchitecture[]>((arr, pack) => {
+      .reduce<BuildRandomizerArchitecture[]>((arr, pack) => {
         return arr.concat(pack.architectures);
       }, []);
     return styles;

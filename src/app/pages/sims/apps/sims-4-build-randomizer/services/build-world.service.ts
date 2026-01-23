@@ -1,12 +1,12 @@
 import { Injectable, computed, inject, type Signal } from '@angular/core';
 import { randFromArray } from '../../../../../../lib/math/rand-from-array';
-import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
+import { BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
 
 @Injectable({
   providedIn: 'any',
 })
-export class SimsBuildWorldService {
-  private store = inject(SIMS_4_BUILD_RANDOMIZER_STORE);
+export class BuildWorldService {
+  private store = inject(BUILD_RANDOMIZER_STORE);
 
   private worlds: Signal<string[]> = computed(() => {
     console.log('Computing enabled worlds from packs');

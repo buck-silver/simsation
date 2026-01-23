@@ -3,12 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSliderModule } from '@angular/material/slider';
-import { SimsBuildBudgetService } from '../services/build-budget.service';
+import { BuildBudgetService } from '../services/build-budget.service';
 import {
-  SimsBuildOccupancyService,
+  BuildOccupancyService,
 } from '../services/build-occupancy.service';
 import {
-  SimsBuildSpecialService,
+  BuildSpecialService,
 } from '../services/build-special.service';
 
 @Component({
@@ -153,7 +153,7 @@ import {
   `,
 })
 export class SuggestionSettingsComponent {
-  specials = inject(SimsBuildSpecialService);
-  occupancy = inject(SimsBuildOccupancyService);
-  budget = inject(SimsBuildBudgetService);
+  specials = inject(BuildSpecialService);
+  occupancy = inject(BuildOccupancyService);
+  budget = inject(BuildBudgetService);
 }

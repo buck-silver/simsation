@@ -1,6 +1,6 @@
 import { InjectionToken, type Provider } from '@angular/core';
 
-export type SimsBuildRandomizerConfig = {
+export type BuildRandomizerConfig = {
   minBudget: number;
   maxBudget: number;
   minOccupancy: number;
@@ -9,16 +9,16 @@ export type SimsBuildRandomizerConfig = {
   maxSpecials: number;
 };
 
-export const SIMS_BUILD_RANDOMIZER_CONFIG =
-  new InjectionToken<SimsBuildRandomizerConfig>(
+export const BUILD_RANDOMIZER_CONFIG =
+  new InjectionToken<BuildRandomizerConfig>(
     'SIMS_BUILD_RANDOMIZER_CONFIG'
   );
 
-export function provideSimsBuildRandomizerConfig(
-  config: SimsBuildRandomizerConfig
+export function provideBuildRandomizerConfig(
+  config: BuildRandomizerConfig
 ): Provider {
   return {
-    provide: SIMS_BUILD_RANDOMIZER_CONFIG,
+    provide: BUILD_RANDOMIZER_CONFIG,
     useValue: config,
   };
 }

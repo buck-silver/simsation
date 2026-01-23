@@ -9,7 +9,7 @@ import { SimsPackSettingsComponent } from '../../../../common/sims/sims-pack-set
 import { SimsLogoComponent } from '../../../../common/sims/sims-logo.component';
 
 @Component({
-  selector: 'sims-4-build-randomizer-page',
+  selector: 'build-randomizer-page',
   imports: [
     MatExpansionModule,
     PageModule,
@@ -37,4 +37,4 @@ import { SimsLogoComponent } from '../../../../common/sims/sims-logo.component';
     </page-controls>
   `,
 })
-export class Sims4BuildRandomizerPage {}
+export class BuildRandomizerPage {}

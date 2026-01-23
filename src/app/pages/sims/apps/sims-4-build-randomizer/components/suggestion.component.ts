@@ -3,7 +3,7 @@ import {
   inject,
 } from '@angular/core';
 import { TypewriteService } from '../services/typewrite.service';
-import { SimsRandomizerService } from '../services/randomizer.service';
+import { BuildRandomizerService } from '../services/build-randomizer.service';
 
 @Component({
   selector: 'suggestion',
@@ -79,5 +79,5 @@ import { SimsRandomizerService } from '../services/randomizer.service';
 })
 export class SuggestionComponent {
   typewriter = inject(TypewriteService);
-  randomizer = inject(SimsRandomizerService);
+  randomizer = inject(BuildRandomizerService);
 }

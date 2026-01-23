@@ -1,12 +1,12 @@
 import { inject, Injectable } from '@angular/core';
-import { SIMS_4_BUILD_RANDOMIZER_COLORS } from '../build-randomizer-tokens';
+import { BUILD_RANDOMIZER_COLORS } from '../build-randomizer-tokens';
 import { randFromArray } from '../../../../../../lib/math/rand-from-array';
 
 @Injectable({
   providedIn: 'any',
 })
-export class SimsBuildColorService {
-  colors: string[] = inject(SIMS_4_BUILD_RANDOMIZER_COLORS);
+export class BuildColorService {
+  colors: string[] = inject(BUILD_RANDOMIZER_COLORS);
 
   suggest(): string {
     const color = randFromArray(this.colors);

@@ -1,6 +1,6 @@
 import type { SimsPack } from './sims-pack';
 
-export type Sims4BuildRandomizerArchitecture = {
+export type BuildRandomizerArchitecture = {
   /**
    * The name of the architectural style.
    */
@@ -12,11 +12,11 @@ export type Sims4BuildRandomizerArchitecture = {
   phrase: string;
 }
 
-export type Sims4BuildRandomizerPack = SimsPack & {
+export type BuildRandomizerPack = SimsPack & {
   /**
    * The additional architectures for the pack.
    */
-  architectures: Sims4BuildRandomizerArchitecture[];
+  architectures: BuildRandomizerArchitecture[];
 
   /**
    * The additional lot challenges for the pack.
@@ -39,7 +39,7 @@ export type Sims4BuildRandomizerPack = SimsPack & {
   worlds: string[];
 }
 
-export type Sims4BuildRandomizerConfig = {
+export type BuildRandomizerConfig = {
   /**
    * The colors for the build randomizer.
    */
@@ -48,6 +48,6 @@ export type Sims4BuildRandomizerConfig = {
   /**
    * The packs for the build randomizer.
    */
-  packs: Sims4BuildRandomizerPack[];
+  packs: BuildRandomizerPack[];
 }
 

@@ -4,7 +4,7 @@ import { randFromArray } from '../../../../../../lib/math/rand-from-array';
 @Injectable({
   providedIn: 'any',
 })
-export class SimsBuildReactionService {
+export class BuildReactionService {
   private reactions = [
     '😀','😁','😂','🤣','😃','😄','😅','😆','😉','😊',
     '😋','😎','😍','😘','🥰','😚','🙂','🤗','🤩','🤨',

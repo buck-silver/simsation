@@ -1,12 +1,12 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { SimsBuildBudgetService } from './build-budget.service';
-import { SimsBuildColorService } from './build-color.service';
-import { SimsBuildLotTraitService } from './build-lot-trait.service';
-import { SimsBuildReactionService } from './build-reaction.service';
-import { SimsBuildOccupancyService } from './build-occupancy.service';
-import { SimsBuildSpecialService } from './build-special.service';
-import { SimsArchitectureService } from './build-architecture.service';
-import { SimsBuildWorldService } from './build-world.service';
+import { BuildBudgetService } from './build-budget.service';
+import { BuildColorService } from './build-color.service';
+import { BuildLotTraitService } from './build-lot-trait.service';
+import { BuildReactionService } from './build-reaction.service';
+import { BuildOccupancyService } from './build-occupancy.service';
+import { BuildSpecialService } from './build-special.service';
+import { BuildArchitectureService } from './build-architecture.service';
+import { BuildWorldService } from './build-world.service';
 import { Stepper, StepperShift } from '../../../../../../lib/utils/stepper';
 
 export type Suggestion = {
@@ -17,16 +17,16 @@ export type Suggestion = {
 @Injectable({
   providedIn: 'any',
 })
-export class SimsRandomizerService {
+export class BuildRandomizerService {
   private stepper: Stepper<Suggestion> = new Stepper();
-  private buildArchitecture = inject(SimsArchitectureService);
-  private buildBudget = inject(SimsBuildBudgetService);
-  private buildColor = inject(SimsBuildColorService);
-  private buildLotTrait = inject(SimsBuildLotTraitService);
-  private buildOccupancy = inject(SimsBuildOccupancyService);
-  private buildReaction = inject(SimsBuildReactionService);
-  private buildSpecial = inject(SimsBuildSpecialService);
-  private buildWorld = inject(SimsBuildWorldService);
+  private buildArchitecture = inject(BuildArchitectureService);
+  private buildBudget = inject(BuildBudgetService);
+  private buildColor = inject(BuildColorService);
+  private buildLotTrait = inject(BuildLotTraitService);
+  private buildOccupancy = inject(BuildOccupancyService);
+  private buildReaction = inject(BuildReactionService);
+  private buildSpecial = inject(BuildSpecialService);
+  private buildWorld = inject(BuildWorldService);
 
   private _isNavigating: boolean = false;
   get isNavigating(): boolean {

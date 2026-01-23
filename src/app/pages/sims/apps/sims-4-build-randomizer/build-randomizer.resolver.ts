@@ -4,18 +4,18 @@ import { TransferState, makeStateKey } from '@angular/core';
 import { tap } from 'rxjs';
 import { SimsDataService } from '../../../../common/sims/sims-data.service';
 import {
-  SIMS_4_BUILD_RANDOMIZER_COLORS,
-  SIMS_4_BUILD_RANDOMIZER_STORE,
+  BUILD_RANDOMIZER_COLORS,
+  BUILD_RANDOMIZER_STORE,
 } from './build-randomizer-tokens';
-import type { Sims4BuildRandomizerConfig } from '../../../../common/sims/types/sims4-build-randomizer';
+import type { BuildRandomizerConfig } from '../../../../common/sims/types/build-randomizer';
 
-const DATA_KEY = makeStateKey<any>('SIMS_4_BUILD_RANDOMIZER_DATA');
+const DATA_KEY = makeStateKey<any>('BUILD_RANDOMIZER_DATA');
 
-export const sims4BuildRandomizerResolver: ResolveFn<
-  Sims4BuildRandomizerConfig
+export const buildRandomizerResolver: ResolveFn<
+  BuildRandomizerConfig
 > = (route, state) => {
-  const store = inject(SIMS_4_BUILD_RANDOMIZER_STORE);
-  const colors = inject(SIMS_4_BUILD_RANDOMIZER_COLORS);
+  const store = inject(BUILD_RANDOMIZER_STORE);
+  const colors = inject(BUILD_RANDOMIZER_COLORS);
 
   const dataService = inject(SimsDataService);
   const transferState = inject(TransferState);

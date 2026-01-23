@@ -8,23 +8,23 @@ import {
 import { randomInt } from '../../../../../../lib/math/random-int';
 import { SlidingInterval } from '../utils/sliding-interval';
 import {
-  SIMS_BUILD_RANDOMIZER_CONFIG,
-  type SimsBuildRandomizerConfig,
+  BUILD_RANDOMIZER_CONFIG,
+  type BuildRandomizerConfig,
 } from '../build-randomizer-config';
-import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
+import { BUILD_RANDOMIZER_STORE } from '../build-randomizer-tokens';
 
 @Injectable({
   providedIn: 'any',
 })
-export class SimsBuildSpecialService extends SlidingInterval {
+export class BuildSpecialService extends SlidingInterval {
   constructor(
-    @Inject(SIMS_BUILD_RANDOMIZER_CONFIG)
-    cfg: SimsBuildRandomizerConfig
+    @Inject(BUILD_RANDOMIZER_CONFIG)
+    cfg: BuildRandomizerConfig
   ) {
     super(cfg.minSpecials, cfg.maxSpecials);
   }
 
-  private store = inject(SIMS_4_BUILD_RANDOMIZER_STORE);
+  private store = inject(BUILD_RANDOMIZER_STORE);
 
   private specials: Signal<string[]> = computed(() => {
     console.log('Computing enabled specials from packs');

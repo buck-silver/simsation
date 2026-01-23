@@ -1,17 +1,17 @@
 import { Inject, Injectable } from '@angular/core';
 import { SlidingInterval } from '../utils/sliding-interval';
 import {
-  SIMS_BUILD_RANDOMIZER_CONFIG,
-  type SimsBuildRandomizerConfig,
+  BUILD_RANDOMIZER_CONFIG,
+  type BuildRandomizerConfig,
 } from '../build-randomizer-config';
 
 @Injectable({
   providedIn: 'any',
 })
-export class SimsBuildOccupancyService extends SlidingInterval {
+export class BuildOccupancyService extends SlidingInterval {
   constructor(
-    @Inject(SIMS_BUILD_RANDOMIZER_CONFIG)
-    cfg: SimsBuildRandomizerConfig
+    @Inject(BUILD_RANDOMIZER_CONFIG)
+    cfg: BuildRandomizerConfig
   ) {
     super(cfg.minOccupancy, cfg.maxOccupancy);
   }
