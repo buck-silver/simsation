@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { PageModule } from '../../../core/page/page.module';
-import { PageDirective } from '../../../core/page/components/page.directive';
+import { PageModule } from '../../../../core/page/page.module';
+import { PageDirective } from '../../../../core/page/components/page.directive';
 import { SuggestionActionsComponent } from './components/suggestion-actions.component';
 import { SuggestionSettingsComponent } from './components/suggestion-settings.component';
 import { SuggestionComponent } from './components/suggestion.component';
-import { SimsPackSettingsComponent } from '../../../common/sims/sims-pack-settings.component';
-import { SimsLogoComponent } from '../../../common/sims/sims-logo.component';
+import { SimsPackSettingsComponent } from '../../../../common/sims/sims-pack-settings.component';
+import { SimsLogoComponent } from '../../../../common/sims/sims-logo.component';
 
 @Component({
   selector: 'sims-4-build-randomizer-page',

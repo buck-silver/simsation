@@ -7,7 +7,7 @@ import { SimsBuildOccupancyService } from './sims-build-occupancy.service';
 import { SimsBuildSpecialService } from './sims-build-special.service';
 import { SimsArchitectureService } from './sims-build-architecture.service';
 import { SimsBuildWorldService } from './sims-build-world.service';
-import { Stepper, StepperShift } from '../../../../../lib/utils/stepper';
+import { Stepper, StepperShift } from '../../../../../../lib/utils/stepper';
 
 export type Suggestion = {
   value: string;

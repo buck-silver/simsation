@@ -1,5 +1,5 @@
 import { Injectable, computed, inject, type Signal } from '@angular/core';
-import { randFromArray } from '../../../../../lib/math/rand-from-array';
+import { randFromArray } from '../../../../../../lib/math/rand-from-array';
 import { SIMS_4_BUILD_RANDOMIZER_STORE } from '../sims-4-build-randomizer-tokens';
 
 @Injectable({

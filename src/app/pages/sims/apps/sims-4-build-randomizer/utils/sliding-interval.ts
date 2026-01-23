@@ -1,7 +1,7 @@
 import { Inject, Injectable, InjectionToken, signal } from '@angular/core';
-import { isInRange } from '../../../../../lib/math/is-in-range';
-import { randomInt } from '../../../../../lib/math/random-int';
-import { clamp } from '../../../../../lib/math/clamp';
+import { isInRange } from '../../../../../../lib/math/is-in-range';
+import { randomInt } from '../../../../../../lib/math/random-int';
+import { clamp } from '../../../../../../lib/math/clamp';
 
 export const MIN_BOUND = new InjectionToken<number>('MIN_BOUND');
 export const MAX_BOUND = new InjectionToken<number>('MAX_BOUND');

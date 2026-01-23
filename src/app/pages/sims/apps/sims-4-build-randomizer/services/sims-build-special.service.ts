@@ -5,7 +5,7 @@ import {
   inject,
   type Signal,
 } from '@angular/core';
-import { randomInt } from '../../../../../lib/math/random-int';
+import { randomInt } from '../../../../../../lib/math/random-int';
 import { SlidingInterval } from '../utils/sliding-interval';
 import {
   SIMS_BUILD_RANDOMIZER_CONFIG,
