@@ -42,17 +42,17 @@ export const APPS_ROUTES: Routes = [
   {
     path: 'build-randomizer',
     loadChildren: () =>
-      import('./sims-4-build-randomizer/build-randomizer.routes'),
+      import('./build-randomizer/build-randomizer.routes'),
   },
   {
     path: 'room-color-randomizer',
     loadChildren: () =>
-      import('./sims-room-color-randomizer/sims-room-color-randomizer.routes'),
+      import('./room-color-randomizer/sims-room-color-randomizer.routes'),
   },
   {
     path: 'room-pack-randomizer',
     loadChildren: () =>
-      import('./sims-room-pack-randomizer/sims-room-pack-randomizer.routes'),
+      import('./room-pack-randomizer/sims-room-pack-randomizer.routes'),
   },
 ];
 
