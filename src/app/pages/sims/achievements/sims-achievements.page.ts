@@ -61,7 +61,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     }
   `,
 })
-export class SimsAchievementsPage {
+export default class SimsAchievementsPage {
   private route = inject(ActivatedRoute);
 
   private data = toSignal(this.route.data);
