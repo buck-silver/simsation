@@ -1,6 +1,6 @@
 import { Injectable, inject, signal, type WritableSignal } from '@angular/core';
-import type { SimsPack } from '../../../common/sims/types/sims-pack';
-import { SIMS_PACK_STORE } from '../../../common/sims/sims-pack-cache-token';
+import type { SimsPack } from '../../../../common/sims/types/sims-pack';
+import { SIMS_PACK_STORE } from '../../../../common/sims/sims-pack-cache-token';
 
 type RoomData = {
   name: string;
