@@ -1,4 +1,8 @@
 create schema if not exists ref;
+grant usage on schema ref to service_role;
+alter default privileges in schema ref grant all privileges on tables to service_role;
+alter default privileges in schema ref grant all privileges on sequences to service_role;
+alter default privileges in schema ref grant all privileges on functions to service_role;
 
 drop table if exists ref.architectures cascade;
 

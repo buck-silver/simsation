@@ -1,4 +1,8 @@
 create schema if not exists sims3;
+grant usage on schema sims3 to service_role;
+alter default privileges in schema sims3 grant all privileges on tables to service_role;
+alter default privileges in schema sims3 grant all privileges on sequences to service_role;
+alter default privileges in schema sims3 grant all privileges on functions to service_role;
 
 drop table if exists sims3.packs cascade;
 

@@ -1,4 +1,8 @@
 create schema if not exists sims4;
+grant usage on schema sims4 to service_role;
+alter default privileges in schema sims4 grant all privileges on tables to service_role;
+alter default privileges in schema sims4 grant all privileges on sequences to service_role;
+alter default privileges in schema sims4 grant all privileges on functions to service_role;
 
 drop table if exists sims4.packs cascade;
 drop table if exists sims4.achievements cascade;

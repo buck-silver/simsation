@@ -1,4 +1,8 @@
 create schema if not exists fn;
+grant usage on schema fn to service_role;
+alter default privileges in schema fn grant all privileges on tables to service_role;
+alter default privileges in schema fn grant all privileges on sequences to service_role;
+alter default privileges in schema fn grant all privileges on functions to service_role;
 
 create or replace function fn.normalize_color_hex(input text)
 returns text

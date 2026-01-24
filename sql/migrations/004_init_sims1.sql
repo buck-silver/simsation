@@ -1,4 +1,8 @@
 create schema if not exists sims1;
+grant usage on schema sims1 to service_role;
+alter default privileges in schema sims1 grant all privileges on tables to service_role;
+alter default privileges in schema sims1 grant all privileges on sequences to service_role;
+alter default privileges in schema sims1 grant all privileges on functions to service_role;
 
 drop table if exists sims1.packs cascade;
 
