@@ -3,7 +3,7 @@ import type { Nav } from '../../../core/navigation/nav';
 
 export const NAV: Nav = {
   text: 'Worlds',
-  path: 'worlds',
+  path: 'sims/worlds',
 };
 
 export const WORLDS_ROUTES: Routes = [
@@ -107,9 +107,14 @@ export const WORLDS_ROUTES: Routes = [
 export const ROUTES: Routes = [
   {
     path: 'worlds',
-    title: 'Worlds | Simsation',
-    loadComponent: () => import('./worlds.page'),
-    children: WORLDS_ROUTES,
+    children: [
+      {
+        path: '',
+        title: 'Worlds | Sims | Simsation',
+        loadComponent: () => import('./worlds.page'),
+      },
+      ...WORLDS_ROUTES
+    ],
   },
 ];
 

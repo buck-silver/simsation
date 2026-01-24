@@ -3,7 +3,7 @@ import type { Nav } from '../../../core/navigation/nav';
 
 export const NAV: Nav = {
   text: 'Challenges',
-  path: 'challenges',
+  path: 'sims/challenges',
 };
 
 export const CHALLENGES_ROUTES: Routes = [
@@ -93,9 +93,13 @@ export const CHALLENGES_ROUTES: Routes = [
 export const ROUTES: Routes = [
   {
     path: 'challenges',
-    title: 'Challenges | Simsation',
-    loadComponent: () => import('./challenges.page'),
-    children: CHALLENGES_ROUTES,
+    children: [
+      {
+        path: '',
+        title: 'Challenges | Sims | Simsation',
+        loadComponent: () => import('./challenges.page'),
+      },
+      ...CHALLENGES_ROUTES],
   },
 ];
 

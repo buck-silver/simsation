@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { SimsAchievementsPage } from './sims-achievements.page';
 import { simsAchievementsResolver } from './sims-achievements.resolver';
 import type { Nav } from '../../../core/navigation/nav';
 
@@ -12,7 +11,7 @@ export const ROUTES: Routes = [
   {
     path: 'achievements',
     title: 'Sims 4 Achievements | Sims | Simsation',
-    component: SimsAchievementsPage,
+    loadComponent: () => import('./sims-achievements.page'),
     resolve: {
       achievements: simsAchievementsResolver,
     },

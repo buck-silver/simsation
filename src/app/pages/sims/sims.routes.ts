@@ -12,8 +12,8 @@ export const NAV: Nav = {
   children: [
     ...loadNav(apps.NAV),
     ...loadNav(achievements.NAV),
-    ...loadNav(shells.NAV),
     ...loadNav(challenges.NAV),
+    ...loadNav(shells.NAV),
     ...loadNav(worlds.NAV),
   ],
 };
@@ -21,9 +21,12 @@ export const NAV: Nav = {
 export const ROUTES: Routes = [
   {
     path: 'sims',
-    title: 'Sims | Simsation',
-    loadComponent: () => import('./sims.page'),
     children: [
+      {
+        path: '',
+        title: 'Sims | Simsation',
+        loadComponent: () => import('./sims.page'),
+      },
       ...apps.ROUTES,
       ...achievements.ROUTES,
       ...challenges.ROUTES,

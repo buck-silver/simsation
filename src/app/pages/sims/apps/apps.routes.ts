@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 import type { Nav } from '../../../core/navigation/nav';
+import buildRandomizer from './build-randomizer/build-randomizer.routes';
+import roomColorRandomizer from './room-color-randomizer/sims-room-color-randomizer.routes';
+import roomPackRandomizer from './room-pack-randomizer/sims-room-pack-randomizer.routes';
 
 export const NAV: Nav = {
   text: 'Apps',
@@ -7,7 +10,7 @@ export const NAV: Nav = {
   children: [
     {
       text: 'Sims 4 Random Build Generator',
-      path: 'sims/apps/build-randomizer/sims4',
+      path: 'sims/apps/build-randomizer',
     },
     {
       text: 'Every Room is a Different Color',
@@ -39,29 +42,22 @@ export const NAV: Nav = {
 };
 
 export const APPS_ROUTES: Routes = [
-  {
-    path: 'build-randomizer',
-    loadChildren: () =>
-      import('./build-randomizer/build-randomizer.routes'),
-  },
-  {
-    path: 'room-color-randomizer',
-    loadChildren: () =>
-      import('./room-color-randomizer/sims-room-color-randomizer.routes'),
-  },
-  {
-    path: 'room-pack-randomizer',
-    loadChildren: () =>
-      import('./room-pack-randomizer/sims-room-pack-randomizer.routes'),
-  },
+  ...buildRandomizer,
+  ...roomColorRandomizer,
+  ...roomPackRandomizer,
 ];
 
 export const ROUTES: Routes = [
   {
     path: 'apps',
-    title: 'Apps | Simsation',
-    loadComponent: () => import('./apps.page'),
-    children: APPS_ROUTES,
+    children: [
+      {
+        path: '',
+        title: 'Apps | Sims | Simsation',
+        loadComponent: () => import('./apps.page'),
+      },
+      ...APPS_ROUTES
+    ],
   },
 ];
 
