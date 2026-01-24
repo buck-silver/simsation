@@ -76,7 +76,13 @@ This project demonstrates not just technical skills, but the ability to build pr
 ## Project Structure
 
 ```
-src/
+public/                  # Static files
+
+sql/                     # SQL source (Supabase / PostgresQL)
+├── migrations/          # Step by step migrations to recreate the DB
+└── schema/              # Source of truth for the DB
+
+src/                     # Source code
 ├── app/                 # Angular client app
 │   ├── common/          # Shared components unique to Simsation.ca
 │   ├── config/          # Application configuration
@@ -90,6 +96,10 @@ src/
 │   ├── validate/        # Type guards and validators
 │   └── utils/           # General utilities
 └── server/              # Angular SSR server, express API and middleware
+
+# Utility apps and scripts
+utils/
+└── img-to-webp/         # converts images to webp format
 ```
 
 ---
