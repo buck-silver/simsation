@@ -84,25 +84,21 @@ export function configureSecurityMiddleware(app: Express): void {
   app.use(cors(corsOptions));
 
   // General rate limiter
-  const generalLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 1000, // Limit each IP to 1000 requests per windowMs
-    message: 'Too many requests from this IP, please try again later.',
-    standardHeaders: true,
-    legacyHeaders: false,
-  });
-
-  app.use(generalLimiter);
+  app.use(createApiRateLimiter());
 }
 
 /**
  * Creates a strict rate limiter for API endpoints
  */
-export function createApiRateLimiter() {
+export function createApiRateLimiter(
+  windowMs: number = 15 * 60 * 1000,
+  maxRequests: number = 100,
+  message: string = 'Too many requests from this IP, please try again later.'
+) {
   return rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per windowMs
-    message: 'Too many API requests from this IP, please try again later.',
+    windowMs: windowMs, 
+    max: maxRequests,
+    message: message,
     standardHeaders: true,
     legacyHeaders: false,
     skip: (req) => {
