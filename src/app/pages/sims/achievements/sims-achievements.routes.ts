@@ -10,7 +10,7 @@ export const NAV: Nav = {
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'achievements',
     title: 'Sims 4 Achievements | Sims | Simsation',
     component: SimsAchievementsPage,
     resolve: {
