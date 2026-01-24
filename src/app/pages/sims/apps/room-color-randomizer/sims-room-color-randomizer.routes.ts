@@ -3,7 +3,7 @@ import { SimsRoomColorRandomizerPage } from './sims-room-color-randomizer.page';
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'room-color-randomizer',
     title: 'Every Room is a Different Color | Apps | Simsation',
     component: SimsRoomColorRandomizerPage,
   },

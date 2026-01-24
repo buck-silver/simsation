@@ -11,7 +11,7 @@ import { SIMS_PACK_STORE } from '../../../../common/sims/sims-pack-cache-token';
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'build-randomizer',
     title: 'Sims 4 Random Build Generator | Apps | Sims | Simsation',
     component: BuildRandomizerPage,
     resolve: {

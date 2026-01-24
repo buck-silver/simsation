@@ -12,7 +12,7 @@ import { provideSimsPack } from '../../../../common/sims/sims-pack-cache-token';
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'room-pack-randomizer',
     children: [
       {
         path: 'sims1',
