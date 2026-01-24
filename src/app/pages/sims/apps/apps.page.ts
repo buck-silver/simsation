@@ -253,7 +253,7 @@ export default class AppsPage {
       description:
         'Serves up randomized suggestions for lot type, style, budget, and more. Perfect for sparking ideas and pushing your creative limits.',
       emoji: '🏠',
-      route: './sims/build-randomizer/sims4',
+      route: './sims/build-randomizer',
       tag: 'Building',
     },
     {
@@ -261,7 +261,7 @@ export default class AppsPage {
       description:
         'Randomly selects achievements for you to chase — from quirky to challenging. Keeps your gameplay fresh and focused.',
       emoji: '🏆',
-      route: './sims/achievements/sims4',
+      route: './sims/achievements',
       tag: 'Gameplay',
     },
     {
