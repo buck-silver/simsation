@@ -98,3 +98,5 @@ from
     where w.pack_code = pack.code
   ) w on true
 ;
+
+comment on view sims4.build_randomizer is 'Comprehensive view for Sims Build Randomizer app, aggregating colors and pack-specific randomization options.';
