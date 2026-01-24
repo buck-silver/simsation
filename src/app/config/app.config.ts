@@ -14,7 +14,7 @@ import {
   OverlayContainer,
 } from '@angular/cdk/overlay';
 import { provideNav } from '../core/navigation/nav';
-import { NAVIGATION_CONFIG } from './navigation.config';
+import { NAV_CONFIG } from './navigation.config';
 
 export const APP_CONFIG: ApplicationConfig = {
   providers: [
@@ -27,7 +27,7 @@ export const APP_CONFIG: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
-    provideNav(NAVIGATION_CONFIG),
+    provideNav(NAV_CONFIG),
     provideClientHydration(withEventReplay()),
     {
       provide: OverlayContainer,

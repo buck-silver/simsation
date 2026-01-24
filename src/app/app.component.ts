@@ -5,7 +5,7 @@ import { ShellComponent } from './core/shell/shell.component';
 import { ShellMenuComponent } from './core/shell/components/shell-menu.component';
 import { ShellBannerComponent } from './core/shell/components/shell-banner.component';
 import { MySocialsComponent } from './common/my-socials/my-socials.component';
-import { NAV_MAIN } from './core/navigation/nav-main';
+import { NAV } from './core/navigation/nav';
 
 @Component({
   selector: 'client-root',
@@ -103,5 +103,5 @@ import { NAV_MAIN } from './core/navigation/nav-main';
   `,
 })
 export class AppComponent {
-  readonly mainNav = inject(NAV_MAIN);
+  readonly mainNav = inject(NAV);
 }

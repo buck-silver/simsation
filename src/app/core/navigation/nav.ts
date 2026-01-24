@@ -10,14 +10,14 @@ export type NavNode = {
 
 export type Nav = NavNode | NavNode[];
 
-export const NAV_MAIN = new InjectionToken<NavNode[]>('NAV_MAIN');
+export const NAV = new InjectionToken<NavNode[]>('NAV');
 
-export function provideNav(nav: Nav): ValueProvider {
+export function provideNav(nav: Nav, useToken?: InjectionToken<NavNode[]>): ValueProvider {
   if (!Array.isArray(nav)) {
     nav = [nav];
   }
   return {
-    provide: NAV_MAIN,
+    provide: useToken ?? NAV,
     useValue: nav,
   };
 }
