@@ -2,6 +2,8 @@ import helmet from 'helmet';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import type { Express } from 'express';
+import { BLOCKED_CONFIG } from '../config/blocked.config';
+import { withBlockedPaths } from './blocked/with-blocked-paths.middleware';
 
 /**
  * Configures security middleware for the Express application
@@ -49,6 +51,9 @@ export function configureSecurityMiddleware(app: Express): void {
       },
     })
   );
+
+  // Block common attack/probe paths early
+  app.use(withBlockedPaths(BLOCKED_CONFIG));
 
   // CORS configuration
   const corsOptions: cors.CorsOptions = {
