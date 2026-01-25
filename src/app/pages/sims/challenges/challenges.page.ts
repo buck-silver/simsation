@@ -5,6 +5,7 @@ import { PageModule } from '../../../core/page/page.module';
 import { NavTableComponent } from '../../../core/navigation/components/nav-table.component';
 import { CHALLENGES_ROUTES } from './challenges.routes';
 import { ContentModule } from '../../../core/content/content.module';
+import { MyCardComponent } from '../../../common/my-card/my-card.component';
 
 type ChallengeCard = {
   title: string;
@@ -13,11 +14,17 @@ type ChallengeCard = {
   icon: string;
   category: 'Legacy' | 'Story' | 'Lifestyle' | 'Chaos';
   featured?: boolean;
-}
+};
 
 @Component({
   selector: 'challenges-page',
-  imports: [PageModule, ContentModule, NavTableComponent, RouterModule],
+  imports: [
+    PageModule,
+    ContentModule,
+    NavTableComponent,
+    RouterModule,
+    MyCardComponent,
+  ],
   hostDirectives: [PageDirective],
   template: `
     <header pageHeader>
@@ -38,14 +45,15 @@ type ChallengeCard = {
         <h2 class="section-heading">🌟 Featured Challenges</h2>
         <div class="card-grid">
           @for (challenge of featuredChallenges(); track challenge.path) {
-            <a [routerLink]="challenge.path" class="challenge-card featured">
-              <div class="card-icon">{{ challenge.icon }}</div>
-              <h3 class="card-title">{{ challenge.title }}</h3>
-              <p class="card-description">{{ challenge.description }}</p>
-              <div class="card-meta">
-                <span class="category">{{ challenge.category }}</span>
-              </div>
-            </a>
+            <a
+              myCard
+              [routerLink]="challenge.path"
+              [icon]="challenge.icon"
+              [title]="challenge.title"
+              [description]="challenge.description"
+              [category]="challenge.category"
+              class="featured"
+            ></a>
           }
         </div>
       </section>
@@ -54,19 +62,19 @@ type ChallengeCard = {
       <section class="category-section">
         <h2 class="section-heading">🏰 Legacy & Dynasty</h2>
         <p class="category-desc">
-          Build a multi-generational empire. These challenges test your long-term
-          planning and storytelling skills across 10+ generations.
+          Build a multi-generational empire. These challenges test your
+          long-term planning and storytelling skills across 10+ generations.
         </p>
         <div class="card-grid">
           @for (challenge of legacyChallenges(); track challenge.path) {
-            <a [routerLink]="challenge.path" class="challenge-card">
-              <div class="card-icon">{{ challenge.icon }}</div>
-              <h3 class="card-title">{{ challenge.title }}</h3>
-              <p class="card-description">{{ challenge.description }}</p>
-              <div class="card-meta">
-                <span class="category">{{ challenge.category }}</span>
-              </div>
-            </a>
+            <a
+              myCard
+              [routerLink]="challenge.path"
+              [icon]="challenge.icon"
+              [title]="challenge.title"
+              [description]="challenge.description"
+              [category]="challenge.category"
+            ></a>
           }
         </div>
       </section>
@@ -80,14 +88,14 @@ type ChallengeCard = {
         </p>
         <div class="card-grid">
           @for (challenge of storyChallenges(); track challenge.path) {
-            <a [routerLink]="challenge.path" class="challenge-card">
-              <div class="card-icon">{{ challenge.icon }}</div>
-              <h3 class="card-title">{{ challenge.title }}</h3>
-              <p class="card-description">{{ challenge.description }}</p>
-              <div class="card-meta">
-                <span class="category">{{ challenge.category }}</span>
-              </div>
-            </a>
+            <a
+              myCard
+              [routerLink]="challenge.path"
+              [icon]="challenge.icon"
+              [title]="challenge.title"
+              [description]="challenge.description"
+              [category]="challenge.category"
+            ></a>
           }
         </div>
       </section>
@@ -101,14 +109,14 @@ type ChallengeCard = {
         </p>
         <div class="card-grid">
           @for (challenge of lifestyleChallenges(); track challenge.path) {
-            <a [routerLink]="challenge.path" class="challenge-card">
-              <div class="card-icon">{{ challenge.icon }}</div>
-              <h3 class="card-title">{{ challenge.title }}</h3>
-              <p class="card-description">{{ challenge.description }}</p>
-              <div class="card-meta">
-                <span class="category">{{ challenge.category }}</span>
-              </div>
-            </a>
+            <a
+              myCard
+              [routerLink]="challenge.path"
+              [icon]="challenge.icon"
+              [title]="challenge.title"
+              [description]="challenge.description"
+              [category]="challenge.category"
+            ></a>
           }
         </div>
       </section>
@@ -122,14 +130,14 @@ type ChallengeCard = {
         </p>
         <div class="card-grid">
           @for (challenge of chaosChallenges(); track challenge.path) {
-            <a [routerLink]="challenge.path" class="challenge-card">
-              <div class="card-icon">{{ challenge.icon }}</div>
-              <h3 class="card-title">{{ challenge.title }}</h3>
-              <p class="card-description">{{ challenge.description }}</p>
-              <div class="card-meta">
-                <span class="category">{{ challenge.category }}</span>
-              </div>
-            </a>
+            <a
+              myCard
+              [routerLink]="challenge.path"
+              [icon]="challenge.icon"
+              [title]="challenge.title"
+              [description]="challenge.description"
+              [category]="challenge.category"
+            ></a>
           }
         </div>
       </section>
@@ -137,11 +145,7 @@ type ChallengeCard = {
       <!-- Browse All -->
       <section class="browse-all">
         <h2 class="section-heading">📋 Browse All Challenges</h2>
-        <nav
-          table
-          [routes]="routes"
-          [relativeTo]="'./'"
-        ></nav>
+        <nav table [routes]="routes" [relativeTo]="'./'"></nav>
       </section>
     </article>
   `,
@@ -260,7 +264,8 @@ export default class ChallengesPage {
     {
       title: 'Legacy Challenge',
       path: 'legacy-challenge',
-      description: 'Build a 10-generation dynasty from a single founder. The classic challenge that started it all.',
+      description:
+        'Build a 10-generation dynasty from a single founder. The classic challenge that started it all.',
       icon: '👑',
       category: 'Legacy',
       featured: true,
@@ -268,7 +273,8 @@ export default class ChallengesPage {
     {
       title: '100 Baby Challenge',
       path: 'one-hundred-baby-challenge',
-      description: 'One matriarch. One hundred babies. No baby daddy repeats. Pure chaos.',
+      description:
+        'One matriarch. One hundred babies. No baby daddy repeats. Pure chaos.',
       icon: '👶',
       category: 'Chaos',
       featured: true,
@@ -276,7 +282,8 @@ export default class ChallengesPage {
     {
       title: 'Not So Berry',
       path: 'not-so-berry-challenge',
-      description: 'A colorful 10-generation legacy with unique career and trait requirements for each heir.',
+      description:
+        'A colorful 10-generation legacy with unique career and trait requirements for each heir.',
       icon: '🌈',
       category: 'Legacy',
       featured: true,
@@ -284,7 +291,8 @@ export default class ChallengesPage {
     {
       title: 'Rags to Riches Mega',
       path: 'rags-to-riches-mega-challenge',
-      description: 'Start with nothing and build an empire. Every simoleon earned through blood, sweat, and tears.',
+      description:
+        'Start with nothing and build an empire. Every simoleon earned through blood, sweat, and tears.',
       icon: '💎',
       category: 'Lifestyle',
       featured: true,
@@ -292,49 +300,56 @@ export default class ChallengesPage {
     {
       title: 'Not So Berry 2',
       path: 'not-so-berry-2-challenge',
-      description: 'The sequel to the beloved colorful legacy challenge with all-new rules and requirements.',
+      description:
+        'The sequel to the beloved colorful legacy challenge with all-new rules and requirements.',
       icon: '🌈',
       category: 'Legacy',
     },
     {
       title: 'Career Legacy',
       path: 'career-legacy-challenge',
-      description: 'Each generation must master a different career path. Can your family conquer them all?',
+      description:
+        'Each generation must master a different career path. Can your family conquer them all?',
       icon: '💼',
       category: 'Legacy',
     },
     {
       title: 'Bunker Legacy',
       path: 'bunker-legacy-challenge',
-      description: 'Survive underground for generations. A claustrophobic twist on the classic legacy.',
+      description:
+        'Survive underground for generations. A claustrophobic twist on the classic legacy.',
       icon: '🔒',
       category: 'Legacy',
     },
     {
       title: 'Vampire Dynasty',
       path: 'vampire-dynasty-challenge',
-      description: 'Build an immortal vampire empire across the ages. Embrace the dark side.',
+      description:
+        'Build an immortal vampire empire across the ages. Embrace the dark side.',
       icon: '🧛',
       category: 'Legacy',
     },
     {
       title: 'A Different Kind of Jam',
       path: 'a-different-kind-of-jam',
-      description: 'Live through a quirky 10 generation legacy where each generation is themed around a different fruit.',
+      description:
+        'Live through a quirky 10 generation legacy where each generation is themed around a different fruit.',
       icon: '🍓',
       category: 'Legacy',
     },
     {
       title: 'Decades Challenge',
       path: 'decades-challenge',
-      description: 'Play through history, one decade at a time, with era-appropriate restrictions.',
+      description:
+        'Play through history, one decade at a time, with era-appropriate restrictions.',
       icon: '📻',
       category: 'Story',
     },
     {
       title: 'Black Widow',
       path: 'black-widow-challenge',
-      description: 'Seduce, marry, and... eliminate. How many spouses can you bury?',
+      description:
+        'Seduce, marry, and... eliminate. How many spouses can you bury?',
       icon: '🕷️',
       category: 'Story',
       featured: true,
@@ -342,21 +357,24 @@ export default class ChallengesPage {
     {
       title: 'Asylum Challenge',
       path: 'asylum-challenge',
-      description: 'Eight Sims. One house. Total chaos. Can your Sim maintain sanity and achieve their goals?',
+      description:
+        'Eight Sims. One house. Total chaos. Can your Sim maintain sanity and achieve their goals?',
       icon: '🏥',
       category: 'Chaos',
     },
     {
       title: 'ISBI Challenge',
       path: 'isbi-challenge',
-      description: "I'm Surrounded By Idiots. Control only one Sim while the rest wreak havoc.",
+      description:
+        "I'm Surrounded By Idiots. Control only one Sim while the rest wreak havoc.",
       icon: '🤪',
       category: 'Chaos',
     },
     {
       title: 'Off the Grid',
       path: 'off-the-grid-challenge',
-      description: 'Disconnect from modern conveniences and live sustainably. No power, no problem... right?',
+      description:
+        'Disconnect from modern conveniences and live sustainably. No power, no problem... right?',
       icon: '🌲',
       category: 'Lifestyle',
       featured: true,
@@ -364,14 +382,16 @@ export default class ChallengesPage {
     {
       title: 'Cowplant Farm',
       path: 'cowplant-farm-challenge',
-      description: 'Build a thriving farm of deadly cowplants. What could possibly go wrong?',
+      description:
+        'Build a thriving farm of deadly cowplants. What could possibly go wrong?',
       icon: '🐮',
       category: 'Lifestyle',
     },
     {
       title: 'Cult or Commune',
       path: 'cult-or-commune-challenge',
-      description: 'Start a commune... or is it a cult? Build a self-sustaining community with interesting dynamics.',
+      description:
+        'Start a commune... or is it a cult? Build a self-sustaining community with interesting dynamics.',
       icon: '👨‍👩‍👧‍👦',
       category: 'Story',
     },
