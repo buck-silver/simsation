@@ -20,7 +20,7 @@ import { LotData } from '../components/my-lots-table.component';
         srcUnlabelled="content/worlds/4 - Granite Falls - Outdoor Retreat - Unlabelled.webp"
         srcLabelled="content/worlds/4 - Granite Falls - Outdoor Retreat - Labelled.webp"
         srcUnlabelledBulldozed="content/worlds/4 - Granite Falls - Outdoor Retreat - Unlabelled Bulldozed.webp"
-        srcLabelledBulldozed="assets/content/worlds/4 - Granite Falls - Outdoor Retreat - Labelled Bulldozed.webp"
+        srcLabelledBulldozed="content/worlds/4 - Granite Falls - Outdoor Retreat - Labelled Bulldozed.webp"
       />
 
       <my-lots-table [data]="lots" />

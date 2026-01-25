@@ -17,10 +17,10 @@ import { LotData } from '../components/my-lots-table.component';
 
       <my-world-showcase
         world="Henford-on-Bagley"
-        srcUnlabelled="content/worlds/18 - Henford-on-Bagley - Cottage Living - Unlabelled.webp"
-        srcLabelled="content/worlds/18 - Henford-on-Bagley - Cottage Living - Labelled.webp"
-        srcUnlabelledBulldozed="content/worlds/18 - Henford-on-Bagley - Cottage Living - Unlabelled Bulldozed.webp"
-        srcLabelledBulldozed="content/worlds/18 - Henford-on-Bagley - Cottage Living - Labelled Bulldozed.webp"
+        srcUnlabelled="content/worlds/18 - Henford-On-Bagley - Cottage Living - Unlabelled.webp"
+        srcLabelled="content/worlds/18 - Henford-On-Bagley - Cottage Living - Labelled.webp"
+        srcUnlabelledBulldozed="content/worlds/18 - Henford-On-Bagley - Cottage Living - Unlabelled Bulldozed.webp"
+        srcLabelledBulldozed="content/worlds/18 - Henford-On-Bagley - Cottage Living - Labelled Bulldozed.webp"
       />
 
       <my-lots-table [data]="lots" />
