@@ -27,7 +27,6 @@ export class BuildSpecialService extends SlidingInterval {
   private store = inject(BUILD_RANDOMIZER_STORE);
 
   private specials: Signal<string[]> = computed(() => {
-    console.log('Computing enabled specials from packs');
     const specials = this.store.listedByEnabled().reduce<string[]>((arr, pack) => {
       return arr.concat(pack.specials);
     }, []);

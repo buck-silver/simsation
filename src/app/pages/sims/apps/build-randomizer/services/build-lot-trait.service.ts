@@ -9,7 +9,6 @@ export class BuildLotTraitService {
   private store = inject(BUILD_RANDOMIZER_STORE);
 
   private traits: Signal<string[]> = computed(() => {
-    console.log('Computing enabled lot traits from packs');
     const updated = [];
     for (const pack of this.store.listedByEnabled()) {
       updated.push(...pack.lot_traits);

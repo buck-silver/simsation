@@ -9,7 +9,6 @@ export class BuildWorldService {
   private store = inject(BUILD_RANDOMIZER_STORE);
 
   private worlds: Signal<string[]> = computed(() => {
-    console.log('Computing enabled worlds from packs');
     const worlds = this.store.listedByEnabled().reduce<string[]>((arr, pack) => {
       return arr.concat(pack.worlds);
     }, []);

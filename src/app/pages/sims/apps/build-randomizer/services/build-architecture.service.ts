@@ -10,7 +10,6 @@ export class BuildArchitectureService {
   private store = inject(BUILD_RANDOMIZER_STORE);
 
   private styles: Signal<BuildRandomizerArchitecture[]> = computed(() => {
-    console.log('Computing enabled build styles from packs');
     const styles = this.store
       .listedByEnabled()
       .reduce<BuildRandomizerArchitecture[]>((arr, pack) => {
