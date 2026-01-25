@@ -1,14 +1,29 @@
-a.link {
-  color: inherit;
+// alter text highlight to use tertiary color
+::selection {
+  background-color: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
+}
+
+.base-link{
   box-sizing: border-box;
+  color: inherit;
   margin: 0;
   padding: 0.25rem 0.5rem;
   border-radius: var(--mat-sys-corner-extra-small);
-  text-decoration: underline 1px;
   transition:
     background-color 225ms cubic-bezier(0.4, 0, 0.2, 1),
     color 225ms cubic-bezier(0.4, 0, 0.2, 1),
     text-decoration-thickness 225ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.matched-path {
+    background-color: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+  }
+}
+
+a.link {
+  @extend .base-link;
+  text-decoration: underline 1px;
 
   &:hover {
     background-color: var(--mat-sys-primary);
@@ -21,11 +36,6 @@ a.link {
     color: var(--mat-sys-on-primary-container);
   }
 
-  &.matched-path {
-    background-color: var(--mat-sys-primary-container);
-    color: var(--mat-sys-on-primary-container);
-  }
-  
   &.matched-path:hover {
     background-color: var(--mat-sys-primary);
     color: var(--mat-sys-on-primary);
@@ -36,4 +46,5 @@ a.link {
     color: var(--mat-sys-on-primary-container);
   }
 }
+
 
