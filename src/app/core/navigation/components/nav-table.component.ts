@@ -1,4 +1,3 @@
-
 import {
   Component,
   input,
@@ -13,29 +12,17 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 @Component({
   selector: 'nav[table]',
   imports: [RouterModule, MatTableModule, MatSortModule],
-  styles: [
-    `
-      h2 {
-        font-size: var(--mat-sys-title-large-size);
-      }
-
-      .nav-table {
-        a {
-          margin-left: -0.5rem;
-        }
-      }
-    `,
-  ],
   template: `
     @if (heading()) {
       <h2>{{ heading() }}</h2>
     }
+
     <table class="nav-table" mat-table [dataSource]="source()" matSort>
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
         <td mat-cell *matCellDef="let route">
           <a
-            class="link"
+            class="nav-link link"
             [routerLink]="relativeTo() + route.path"
             routerLinkActive="matched-path"
           >
@@ -48,11 +35,26 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   `,
+  styles: `
+    h2 {
+      font-size: var(--mat-sys-title-large-size);
+    }
+
+    .nav-table {
+      a {
+        margin-left: -0.5rem;
+      }
+    }
+
+    .nav-link {
+      text-decoration: none;
+    }
+  `,
 })
 export class NavTableComponent {
   readonly heading = input<string>();
 
-  readonly relativeTo = input.required<string>();
+  readonly relativeTo = input<string>('/');
 
   readonly routes = input.required<Routes>();
 
