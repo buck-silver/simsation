@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ShellThemeComponent } from '../../core/shell/components/shell-theme.component';
+import { RouterLink } from "@angular/router";
 
 @Component({
-  imports: [MatButtonModule, ShellThemeComponent],
+  imports: [MatButtonModule, ShellThemeComponent, RouterLink],
   selector: 'footer[my-socials]',
   template: `
     <address aria-label="contact details">
       <!-- Home Button -->
       <a
         matButton="filled"
-        href="/"
+        routerLink="/"
         aria-label="homepage link"
         class="home-callback"
       >
