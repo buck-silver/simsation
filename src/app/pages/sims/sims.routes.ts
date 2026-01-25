@@ -9,6 +9,7 @@ import * as worlds from './worlds/worlds.routes';
 export const NAV: Nav = {
   text: 'Sims',
   path: 'sims',
+  expanded: true,
   children: [
     ...loadNav(apps.NAV),
     ...loadNav(achievements.NAV),
