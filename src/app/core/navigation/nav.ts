@@ -32,6 +32,11 @@ export type NavNode = {
   href?: string;
 
   /**
+   * Whether the navigation node is expanded by default (for tree views).
+   */
+  expanded?: boolean;
+
+  /**
    * Child navigation nodes.
    */
   children?: NavNode[];
