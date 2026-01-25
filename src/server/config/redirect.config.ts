@@ -69,23 +69,23 @@ const REDIRECT_CONFIG: RedirectConfig = {
   // | /random-build-generator           | post | Random Build Generator
   // | /update-random-build-generator    | post | UPDATE Random Build Generator
   '/every-room-is-a-different-colour': {
-    target: '/apps/sims-room-color-randomizer',
+    target: '/sims/apps/room-color-randomizer',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/every-room-is-a-different-pack': {
-    target: '/apps/sims-room-pack-randomizer',
+    target: '/sims/apps/room-pack-randomizer',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/random-achievement-generator': {
-    target: '/apps/sims-4-achievements',
+    target: '/sims/achievements',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/random-build-generator': {
-    target: '/apps/sims-4-random-build-generator',
+    target: '/sims/apps/build-randomizer',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/update-random-build-generator': {
-    target: '/apps/sims-4-random-build-generator',
+    target: '/sims/apps/build-randomizer',
     status: HttpRedirectStatus.MovedPermanently,
   },
 
@@ -107,67 +107,67 @@ const REDIRECT_CONFIG: RedirectConfig = {
   // | /rags-to-riches-mega-challenge      | post | Rags to Riches Mega Challenge
   // | /vampire-dynasty-challenge          | post | Vampire Dynasty Challenge
   '/100-baby-challenge':{
-    target: '/challenges/one-hundred-baby-challenge',
+    target: '/sims/challenges/one-hundred-baby-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/a-different-kind-of-jam-challenge': {
-    target: '/challenges/a-different-kind-of-jam',
+    target: '/sims/challenges/a-different-kind-of-jam',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/asylum-challenge':{
-    target: '/challenges/asylum-challenge',
+    target: '/sims/challenges/asylum-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/black-widow-challenge':{
-    target: '/challenges/black-widow-challenge',
+    target: '/sims/challenges/black-widow-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/bunker-legacy-challenge':{
-    target: '/challenges/bunker-legacy-challenge',
+    target: '/sims/challenges/bunker-legacy-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/career-legacy-challenge':{
-    target: '/challenges/career-legacy-challenge',
+    target: '/sims/challenges/career-legacy-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/cowplant-farm-challenge':{
-    target: '/challenges/cowplant-farm-challenge',
+    target: '/sims/challenges/cowplant-farm-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/cult-or-commune-challenge':{
-    target: '/challenges/cult-or-commune-challenge',
+    target: '/sims/challenges/cult-or-commune-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/decades-challenge':{
-    target: '/challenges/decades-challenge',
+    target: '/sims/challenges/decades-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/isbi-challenge':{
-    target: '/challenges/isbi-challenge',
+    target: '/sims/challenges/isbi-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/legacy-challenge':{
-    target: '/challenges/legacy-challenge',
+    target: '/sims/challenges/legacy-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/not-so-berry-challenge':{
-    target: '/challenges/not-so-berry-challenge',
+    target: '/sims/challenges/not-so-berry-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/not-so-berry-2-challenge':{
-    target: '/challenges/not-so-berry-2-challenge',
+    target: '/sims/challenges/not-so-berry-2-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/off-the-grid-challenge':{
-    target: '/challenges/off-the-grid-challenge',
+    target: '/sims/challenges/off-the-grid-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/rags-to-riches-mega-challenge':{
-    target: '/challenges/rags-to-riches-mega-challenge',
+    target: '/sims/challenges/rags-to-riches-mega-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/vampire-dynasty-challenge':{
-    target: '/challenges/vampire-dynasty-challenge',
+    target: '/sims/challenges/vampire-dynasty-challenge',
     status: HttpRedirectStatus.MovedPermanently,
   },
 
@@ -178,23 +178,23 @@ const REDIRECT_CONFIG: RedirectConfig = {
   // | /penthouse-shell          | post | Penthouse Shell
   // | /shipping-container-shell | post | Shipping Container Shell
   '/earthship-shell': {
-    target: '/shells',
+    target: '/sims/shells',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/igloo-shell': {
-    target: '/shells',
+    target: '/sims/shells',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/lighthouse-shell': {
-    target: '/shells',
+    target: '/sims/shells',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/penthouse-shell': {
-    target: '/shells',
+    target: '/sims/shells',
     status: HttpRedirectStatus.MovedPermanently,
   },
   '/shipping-container-shell': {
-    target: '/shells',
+    target: '/sims/shells',
     status: HttpRedirectStatus.MovedPermanently,
   },
 };
