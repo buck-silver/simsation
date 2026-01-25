@@ -16,15 +16,11 @@ import { type NavNode } from '../nav';
     MatTreeModule,
   ],
   template: `
-    <!-- Nav Route -->
-    <ng-template #navRoute let-node>
-
-      <!-- Link -->
+    <!-- Nav Node -->
+    <ng-template #navLink let-node>
+      <!-- External Link -->
       @if (node.href) {
-        <a
-          class="nav-route link"
-          [href]="node.href"
-        >
+        <a class="nav-link link" [href]="node.href">
           {{ node.text }}
         </a>
       }
@@ -32,13 +28,18 @@ import { type NavNode } from '../nav';
       <!-- Route -->
       @else if (node.path) {
         <a
-          class="nav-route link"
-          routerLink="{{ node.path }}"
+          class="nav-link link"
+          [routerLink]="relativeTo() + node.path"
           routerLinkActive="matched-path"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           {{ node.text }}
         </a>
+      }
+
+      <!-- Label -->
+      @else {
+        <span class="nav-link base-link">{{ node.text }}</span>
       }
     </ng-template>
 
@@ -51,33 +52,39 @@ import { type NavNode } from '../nav';
     >
       <!-- Leaf -->
       <mat-nested-tree-node *matTreeNodeDef="let node" class="nav-node">
-        <ng-container *ngTemplateOutlet="navRoute; context: { $implicit: node }" />
+        <ng-container
+          *ngTemplateOutlet="navLink; context: { $implicit: node }"
+        />
       </mat-nested-tree-node>
 
       <!-- Branch (Expandable) -->
       <mat-nested-tree-node
         *matTreeNodeDef="let node; when: hasChild"
         class="nav-node"
+        [isExpandable]="hasChild"
+        [isExpanded]="node.expanded ?? false"
         [class.expanded]="tree.isExpanded(node)"
-        [isExpanded]="false"
       >
-        <ng-container *ngTemplateOutlet="navRoute; context: { $implicit: node }" />
+        <ng-container
+          *ngTemplateOutlet="navLink; context: { $implicit: node }"
+        />
 
         <button
           matTreeNodeToggle
           matIconButton
-          class="nav-toggle"
+          class="nav-children-toggle"
           aria-label="toggle nav section"
         >
-          <mat-icon class="icon" [class.expanded]="tree.isExpanded(node)">
+          <mat-icon
+            class="icon"
+            [class.expanded]="tree.isExpanded(node)"
+            aria-hidden="true"
+          >
             arrow_drop_down
           </mat-icon>
         </button>
 
-        <div
-          class="nav-children"
-          [class.expanded]="tree.isExpanded(node)"
-        >
+        <div class="nav-children" [class.expanded]="tree.isExpanded(node)">
           <ng-container matTreeNodeOutlet></ng-container>
         </div>
       </mat-nested-tree-node>
@@ -92,10 +99,11 @@ import { type NavNode } from '../nav';
       padding: 0 0.5rem 0 0;
     }
 
-    .nav-route {
-      grid-area: route;
+    .nav-link {
+      grid-area: link;
       place-self: center start;
       width: 100%;
+      text-decoration: none;
     }
 
     .nav-node {
@@ -105,19 +113,18 @@ import { type NavNode } from '../nav';
       margin: 0;
       display: grid;
       grid-template-areas:
-        'route    toggle'
+        'link     toggle'
         'children children';
       grid-template-columns: 1fr 3rem;
       grid-template-rows: 3rem 0fr;
       gap: 0;
       transition: grid-template-rows 225ms cubic-bezier(0.4, 0, 0.2, 1);
-
       &.expanded {
         grid-template-rows: 3rem 1fr;
       }
     }
 
-    .nav-toggle {
+    .nav-children-toggle {
       grid-area: toggle;
       box-sizing: border-box;
       place-self: center end;
@@ -149,10 +156,12 @@ import { type NavNode } from '../nav';
   `,
 })
 export class NavTreeComponent {
+  readonly relativeTo = input<string>('/');
+
   readonly routes = input.required<NavNode[]>();
 
-  readonly source = computed(
-    () => this.routes().filter((route) => !!route.path || !!route.href)
+  readonly source = computed(() =>
+    this.routes().filter((route) => !!route.path || !!route.href)
   );
 
   childrenAccessor = (node: NavNode) => node.children ?? [];
