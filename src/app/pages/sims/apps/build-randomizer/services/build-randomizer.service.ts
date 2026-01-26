@@ -35,7 +35,7 @@ export class BuildRandomizerService {
 
   readonly suggestion = signal<Suggestion>({
     value:
-      'Welcome to the Sims 4 Build Randomizer! Click the casino icon to get a random build suggestion.',
+      'Welcome to the Sims 4 Build Randomizer! Click the dice to get a random build suggestion.',
     reaction: '👍',
   });
 
