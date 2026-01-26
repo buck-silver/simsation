@@ -50,10 +50,10 @@ import { SIMS_PACK_STORE } from './sims-pack-cache-token';
               <h3>{{ pack.key }}</h3>
             </div>
             <mat-divider></mat-divider>
-            <section class="pack-grid">
+            <section class="grid">
               @for (pack of pack.value; track pack.name) {
                 <mat-checkbox
-                  class="pack-toggle"
+                  class="checkbox"
                   [checked]="pack.enabled"
                   (change)="packs.toggleByPack(pack)"
                   color="primary"
@@ -97,14 +97,14 @@ import { SIMS_PACK_STORE } from './sims-pack-cache-token';
       }
     }
 
-    .pack-grid {
+    .grid {
       display: grid;
       grid-gap: 1rem;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-auto-rows: 2rem;
     }
 
-    .pack-toggle {
+    .checkbox {
       margin: 0.5em 1em;
     }
   `,
